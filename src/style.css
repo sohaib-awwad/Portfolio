@@ -1,0 +1,55 @@
+:root {
+  --primary: #f57627;
+  --secondary: #27a6f5;
+  --bg: #f2f2f2;
+  --text: #2b2b2b;
+  --muted-text: #7a7a7a;
+  --border: #ddd;
+  --surface: #fff;
+  /* shadows */
+  --shadow-s: inset 0 1px 2px #ffffff30, /* top highlight */ 0 1px 2px #00000030,
+    /* dark shadow */ 0 2px 4px #00000015; /* soft shadow */
+  --shadow-m: inset 0 1px 2px #ffffff50, /* top highlight */ 0 2px 4px #00000030,
+    /* dark shadow */ 0 4px 8px #00000015; /* soft shadow */
+  --shadow-l: inset 0 1px 2px #ffffff70, /* top highlight */ 0 4px 6px #00000030,
+    /* dark shadow */ 0 6px 10px #00000015; /* soft shadow */
+}
+
+:root[data-theme="dark"] {
+  --bg: #f2f2f2;
+  --text: #2b2b2b;
+  --muted-text: #7a7a7a;
+  --border: #ddd;
+  --surface: #fff;
+}
+
+#themeToggle i {
+  transition: transform 0.3s ease;
+}
+#themeToggle i:hover {
+  transform: rotate(20deg);
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Quicksand", sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
