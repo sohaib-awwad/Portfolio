@@ -2,51 +2,46 @@
 const KEY = "theme";
 export type Theme = "light" | "dark";
 
-// يقرأ تفضيل النظام الحالي
 const systemPref = (): Theme =>
   matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 
-// يطبّق السمة على عنصر <html data-theme="...">
 export function apply(t: Theme) {
   document.documentElement.setAttribute("data-theme", t);
 }
 
-// تهيئة السمة عند بدء التطبيق
 export function initTheme() {
-  // 1) اختَر السمة: إمّا محفوظة من قبل، أو من تفضيل النظام
   const saved = (localStorage.getItem(KEY) as Theme) || systemPref();
   apply(saved);
+}
 
-  // 2) لو المستخدم ما اختر سمة يدويًا، خليها تتزامن مع تغيّر النظام
-  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
-    if (!localStorage.getItem(KEY)) apply(e.matches ? "dark" : "light");
-  });
+/** Bind all .theme-toggle buttons (desktop + mobile) */
+export function bindThemeToggles() {
+  const buttons = Array.from(
+    document.querySelectorAll<HTMLButtonElement>(".theme-toggle")
+  );
+  if (!buttons.length) return;
 
-  // 3) زر التبديل في النافبار (id="themeToggle")
-  const btn = document.getElementById(
-    "themeToggle"
-  ) as HTMLButtonElement | null;
-
-  // يحدّث نص الزر (أيقونة) بحسب الحالة الحالية
-  const setIcon = () => {
-    if (!btn) return;
-    const theme = document.documentElement.getAttribute("data-theme");
-    btn.innerHTML =
-      theme === "dark"
-        ? '<i class="fa-solid fa-sun"></i>'
-        : '<i class="fa-solid fa-moon"></i>';
+  const setIcons = () => {
+    const isDark =
+      (document.documentElement.getAttribute("data-theme") || "light") ===
+      "dark";
+    buttons.forEach((btn) => {
+      btn.innerHTML = isDark
+        ? '<i class="fa-solid fa-sun" aria-hidden="true"></i>'
+        : '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
+    });
   };
 
-  setIcon();
+  setIcons();
 
-  // عند النقر: بدّل السمة و احفظها
-  btn?.addEventListener("click", () => {
-    const current = document.documentElement.getAttribute(
-      "data-theme"
-    ) as Theme;
+  const toggle = () => {
+    const current =
+      (document.documentElement.getAttribute("data-theme") as Theme) || "light";
     const next: Theme = current === "dark" ? "light" : "dark";
     apply(next);
-    localStorage.setItem(KEY, next); // هذا يوقف مزامنة النظام، لأن المستخدم اختار يدويًا
-    setIcon();
-  });
+    localStorage.setItem(KEY, next);
+    setIcons();
+  };
+
+  buttons.forEach((btn) => btn.addEventListener("click", toggle));
 }
