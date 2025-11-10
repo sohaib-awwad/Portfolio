@@ -1,0 +1,107 @@
+/* === Tech Stack section === */
+.stack {
+  text-align: center;
+  margin-top: 58px;
+}
+
+/* العنوان والنص عندك أصلاً تمام */
+.stack h2 {
+  margin: 0 0 6px;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.stack p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* === Scroller container === */
+.stack .scroller {
+  margin-top: clamp(28px, 4vw, 40px);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+
+  /* أهم سطر: ارتفاع يساوي ارتفاع الأيكونات تقريباً */
+  height: clamp(40px, 5.5vw, 64px);
+
+  /* الفيد على الحواف */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+/* === Track (animated strip) === */
+.stack .scroller__track {
+  position: absolute; /* يخرج من الـ flow بس يظل جوّا scroller */
+  left: 0;
+  top: 50%;
+  transform: translate3d(0, -50%, 0); /* نوسّطه عمودياً */
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 4vw, 40px);
+  width: max-content;
+  animation: stack-scroll 35s linear infinite;
+  will-change: transform;
+}
+
+/* === Icons === */
+.stack .scroller__track img {
+  flex: 0 0 auto;
+  height: clamp(40px, 5.5vw, 64px);
+}
+
+.stack .scroller__track .github {
+  color: var(--text);
+  font-size: clamp(40px, 5.5vw, 64px);
+}
+
+/* === Animation === */
+/* لازم نحافظ على translateY(-50%) في البداية والنهاية */
+@keyframes stack-scroll {
+  0% {
+    transform: translate3d(0, -50%, 0);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0);
+  }
+}
+
+/* === Extra responsiveness tweaks === */
+@media (max-width: 768px) {
+  .stack {
+    padding-block: 32px;
+  }
+
+  .stack .scroller__track {
+    animation-duration: 35s;
+  }
+}
+
+@media (max-width: 480px) {
+  .stack p {
+    max-width: 20rem;
+    margin-inline: auto;
+  }
+}
+
+/* احتياط بسيط لو ظل في شوية overflow أفقي من أي عنصر ثاني */
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
