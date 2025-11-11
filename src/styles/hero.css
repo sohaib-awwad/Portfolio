@@ -85,6 +85,7 @@
 
 .social-icons a:hover {
   color: var(--secondary);
+  transform: translateY(-2px);
 }
 
 .hero-right {

@@ -1,0 +1,88 @@
+.footer {
+  background: var(--surface);
+  color: var(--text);
+  text-align: center;
+  padding-block: 12px 12px;
+  margin-top: 96px;
+  box-shadow: var(--shadow-s);
+}
+
+.footer__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__logo {
+  width: 44px;
+  height: 44px;
+}
+
+.footer__name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.footer__copy {
+  color: var(--muted-text);
+  font-size: 0.9rem;
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer__social a {
+  color: var(--primary);
+  font-size: 1.6rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer__social a:hover {
+  color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.footer__divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-block: 12px;
+  opacity: 0.4;
+}
+
+.footer__bottom {
+  font-size: 0.95rem;
+  color: var(--muted-text);
+  margin: 0;
+}
+
+.footer__bottom .highlight {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer__top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer__copy {
+    order: 3;
+  }
+}

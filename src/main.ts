@@ -4,12 +4,18 @@ import "./styles/navbar.css";
 import "./styles/hero.css";
 import "./styles/techstack.css";
 import "./styles/services.css";
+import "./styles/softskills.css";
+import "./styles/projects.css";
+import "./styles/footer.css";
 
 import { initTheme, bindThemeToggles } from "./utils/theme";
 import { createNavbar, initNavbarMenu } from "./components/navbar";
 import { createHero } from "./components/hero";
 import { createStack } from "./components/techstack";
 import { createServicesSection } from "./components/services";
+import { createSoftSkillsSection } from "./components/softskills";
+import { createProjectsSection } from "./components/projects";
+import { createFooter } from "./components/footer";
 
 const navbarMount = document.querySelector<HTMLElement>("#navbar");
 if (navbarMount) {
@@ -21,6 +27,13 @@ if (app) {
   app.appendChild(createHero());
   app.appendChild(createStack());
   app.appendChild(createServicesSection());
+  app.appendChild(createSoftSkillsSection());
+  app.appendChild(createProjectsSection());
+}
+
+const footerMount = document.querySelector<HTMLElement>("#footer");
+if (footerMount) {
+  footerMount.appendChild(createFooter());
 }
 
 initTheme(); // set initial theme

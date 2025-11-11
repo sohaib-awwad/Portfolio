@@ -12,9 +12,10 @@
 }
 
 .stack p {
-  margin: 0;
   font-size: 1rem;
-  opacity: 0.8;
+  margin: 0 0 24px;
+  color: var(--muted-text);
+  text-align: center;
 }
 
 /* === Scroller container === */
@@ -66,6 +67,11 @@
 }
 
 .stack .scroller__track .github {
+  color: var(--text);
+  font-size: clamp(40px, 5.5vw, 64px);
+}
+
+.stack .scroller__track .notion {
   color: var(--text);
   font-size: clamp(40px, 5.5vw, 64px);
 }
