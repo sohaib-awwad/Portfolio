@@ -19,8 +19,8 @@ export function createHero(): HTMLElement {
       </div>
 
       <div class="social-icons">
-        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="www.linkedin.com/in/sohaib-awwad-619788353" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/sohaib-awwad" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
         <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
       </div>
     </div>
