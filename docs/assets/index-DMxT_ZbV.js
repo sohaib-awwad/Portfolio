@@ -1,8 +1,76 @@
-(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))t(s);new MutationObserver(s=>{for(const a of s)if(a.type==="childList")for(const l of a.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&t(l)}).observe(document,{childList:!0,subtree:!0});function c(s){const a={};return s.integrity&&(a.integrity=s.integrity),s.referrerPolicy&&(a.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?a.credentials="include":s.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function t(s){if(s.ep)return;s.ep=!0;const a=c(s);fetch(s.href,a)}})();const f="theme",m=()=>matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";function g(e){document.documentElement.setAttribute("data-theme",e)}function h(){const e=localStorage.getItem(f)||m();g(e)}function u(){const e=Array.from(document.querySelectorAll(".theme-toggle"));if(!e.length)return;const i=()=>{const t=(document.documentElement.getAttribute("data-theme")||"light")==="dark";e.forEach(s=>{s.innerHTML=t?'<i class="fa-solid fa-sun" aria-hidden="true"></i>':'<i class="fa-solid fa-moon" aria-hidden="true"></i>'})};i();const c=()=>{const s=(document.documentElement.getAttribute("data-theme")||"light")==="dark"?"light":"dark";g(s),localStorage.setItem(f,s),i()};e.forEach(t=>t.addEventListener("click",c))}function v(){const e=document.createElement("nav");return e.className="navbar",e.innerHTML=`
+(function () {
+  const i = document.createElement("link").relList;
+  if (i && i.supports && i.supports("modulepreload")) return;
+  for (const s of document.querySelectorAll('link[rel="modulepreload"]')) t(s);
+  new MutationObserver((s) => {
+    for (const a of s)
+      if (a.type === "childList")
+        for (const l of a.addedNodes)
+          l.tagName === "LINK" && l.rel === "modulepreload" && t(l);
+  }).observe(document, { childList: !0, subtree: !0 });
+  function c(s) {
+    const a = {};
+    return (
+      s.integrity && (a.integrity = s.integrity),
+      s.referrerPolicy && (a.referrerPolicy = s.referrerPolicy),
+      s.crossOrigin === "use-credentials"
+        ? (a.credentials = "include")
+        : s.crossOrigin === "anonymous"
+        ? (a.credentials = "omit")
+        : (a.credentials = "same-origin"),
+      a
+    );
+  }
+  function t(s) {
+    if (s.ep) return;
+    s.ep = !0;
+    const a = c(s);
+    fetch(s.href, a);
+  }
+})();
+const f = "theme",
+  m = () =>
+    matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+function g(e) {
+  document.documentElement.setAttribute("data-theme", e);
+}
+function h() {
+  const e = localStorage.getItem(f) || m();
+  g(e);
+}
+function u() {
+  const e = Array.from(document.querySelectorAll(".theme-toggle"));
+  if (!e.length) return;
+  const i = () => {
+    const t =
+      (document.documentElement.getAttribute("data-theme") || "light") ===
+      "dark";
+    e.forEach((s) => {
+      s.innerHTML = t
+        ? '<i class="fa-solid fa-sun" aria-hidden="true"></i>'
+        : '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
+    });
+  };
+  i();
+  const c = () => {
+    const s =
+      (document.documentElement.getAttribute("data-theme") || "light") ===
+      "dark"
+        ? "light"
+        : "dark";
+    g(s), localStorage.setItem(f, s), i();
+  };
+  e.forEach((t) => t.addEventListener("click", c));
+}
+function v() {
+  const e = document.createElement("nav");
+  return (
+    (e.className = "navbar"),
+    (e.innerHTML = `
     <div class="container navbar__inner">
       <!-- Brand -->
       <a class="brand" href="/" aria-label="Floppy Man home">
-        <img class="brand__logo" src="/icons/Floppy Man.svg" alt="Floppy Man logo" width="44" height="44" />
+        <img class="brand__logo" src="icons/Floppy Man.svg" alt="Floppy Man logo" width="44" height="44" />
         <span class="brand__name">Floppy Man</span>
       </a>
 
@@ -35,7 +103,50 @@
       <a class="menu__link" href="#projects">Projects</a>
       <a class="btn-primary mobile-cta" href="#contact">Contact</a>
     </div>
-  `,e}function b(){const e=document.getElementById("burger"),i=document.getElementById("mobileMenu");if(!e||!i)return;const c=()=>{i.classList.add("is-open"),e.setAttribute("aria-expanded","true"),document.body.style.overflow="hidden"},t=()=>{i.classList.remove("is-open"),e.setAttribute("aria-expanded","false"),document.body.style.overflow=""},s=()=>{i.classList.contains("is-open")?t():c()};e.addEventListener("click",a=>{a.stopPropagation(),s()}),i.addEventListener("click",a=>{a.target.tagName==="A"&&t()}),document.addEventListener("keydown",a=>{a.key==="Escape"&&t()}),document.addEventListener("click",a=>{const l=a.target,o=i.contains(l),n=e.contains(l);i.classList.contains("is-open")&&!o&&!n&&t()}),matchMedia("(min-width: 1025px)").addEventListener("change",a=>{a.matches&&t()})}function _(){const e=document.createElement("section");e.className="container hero",e.innerHTML=`
+  `),
+    e
+  );
+}
+function b() {
+  const e = document.getElementById("burger"),
+    i = document.getElementById("mobileMenu");
+  if (!e || !i) return;
+  const c = () => {
+      i.classList.add("is-open"),
+        e.setAttribute("aria-expanded", "true"),
+        (document.body.style.overflow = "hidden");
+    },
+    t = () => {
+      i.classList.remove("is-open"),
+        e.setAttribute("aria-expanded", "false"),
+        (document.body.style.overflow = "");
+    },
+    s = () => {
+      i.classList.contains("is-open") ? t() : c();
+    };
+  e.addEventListener("click", (a) => {
+    a.stopPropagation(), s();
+  }),
+    i.addEventListener("click", (a) => {
+      a.target.tagName === "A" && t();
+    }),
+    document.addEventListener("keydown", (a) => {
+      a.key === "Escape" && t();
+    }),
+    document.addEventListener("click", (a) => {
+      const l = a.target,
+        o = i.contains(l),
+        n = e.contains(l);
+      i.classList.contains("is-open") && !o && !n && t();
+    }),
+    matchMedia("(min-width: 1025px)").addEventListener("change", (a) => {
+      a.matches && t();
+    });
+}
+function _() {
+  const e = document.createElement("section");
+  (e.className = "container hero"),
+    (e.innerHTML = `
     <div class="hero-content">
       <h1>
         Hi, I'm<br/><span class="gradient-text typing"></span>
@@ -60,53 +171,90 @@
 
     <div class="hero-right">
       <div class="avatar">
-        <img src="/images/Sohaib-suit.webp" alt="Sohaib Awwad" />
+        <img src="images/Sohaib-suit.webp" alt="Sohaib Awwad" />
       </div>
     </div>
-  `;const i=e.querySelector(".typing");if(i){const c=["Sohaib Awwad","Floppy Man"];let t=0,s=0,a=!1;const l=()=>{const o=c[t],n=o.substring(0,s);i.textContent=n,!a&&s<o.length?(s++,setTimeout(l,120)):a&&s>0?(s--,setTimeout(l,80)):a?(a=!1,t=(t+1)%c.length,setTimeout(l,400)):(a=!0,setTimeout(l,1500))};l()}return e}function k(){const e=document.createElement("section");return e.className="container stack",e.innerHTML=`
+  `);
+  const i = e.querySelector(".typing");
+  if (i) {
+    const c = ["Sohaib Awwad", "Floppy Man"];
+    let t = 0,
+      s = 0,
+      a = !1;
+    const l = () => {
+      const o = c[t],
+        n = o.substring(0, s);
+      (i.textContent = n),
+        !a && s < o.length
+          ? (s++, setTimeout(l, 120))
+          : a && s > 0
+          ? (s--, setTimeout(l, 80))
+          : a
+          ? ((a = !1), (t = (t + 1) % c.length), setTimeout(l, 400))
+          : ((a = !0), setTimeout(l, 1500));
+    };
+    l();
+  }
+  return e;
+}
+function k() {
+  const e = document.createElement("section");
+  return (
+    (e.className = "container stack"),
+    (e.innerHTML = `
     <h2>Tech Stack</h2>
     <p>Technologies that keep my code flexible and my ideas flowing.</p>
 
     <div class="scroller">
       <div class="scroller__track">
         <!-- Group A -->
-        <img src="/icons/html.svg" alt="HTML" />
-        <img src="/icons/css.svg" alt="CSS" />
-        <img src="/icons/javascript.svg" alt="JavaScript" />
-        <img src="/icons/typescript.svg" alt="TypeScript" />
-        <img src="/icons/tailwind.svg" alt="Tailwind" />
-        <img src="/icons/bootstrap.svg" alt="Bootstrap" />
-        <img src="/icons/git.svg" alt="Git" />
+        <img src="icons/html.svg" alt="HTML" />
+        <img src="icons/css.svg" alt="CSS" />
+        <img src="icons/javascript.svg" alt="JavaScript" />
+        <img src="icons/typescript.svg" alt="TypeScript" />
+        <img src="icons/tailwind.svg" alt="Tailwind" />
+        <img src="icons/bootstrap.svg" alt="Bootstrap" />
+        <img src="icons/git.svg" alt="Git" />
         <i class="github fa-brands fa-github" aria-label="GitHub"></i>
-        <img src="/icons/angular.svg" alt="Angular" />
-        <img src="/icons/net.svg" alt=".NET" />
-        <img src="/icons/sql.svg" alt="Microsoft SQL" />
-        <img src="/icons/csharp.svg" alt="C#" />
-        <img src="/icons/vs-code.svg" alt="VS Code" />
-        <img src="/icons/vs.svg" alt="VS" />
-        <img src="/icons/figma.svg" alt="Figma" />
-        <img src="/icons/canva.svg" alt="Canva" />
+        <img src="icons/angular.svg" alt="Angular" />
+        <img src="icons/net.svg" alt=".NET" />
+        <img src="icons/sql.svg" alt="Microsoft SQL" />
+        <img src="icons/csharp.svg" alt="C#" />
+        <img src="icons/vs-code.svg" alt="VS Code" />
+        <img src="icons/vs.svg" alt="VS" />
+        <img src="icons/figma.svg" alt="Figma" />
+        <img src="icons/canva.svg" alt="Canva" />
 
         <!-- Group B (loop duplicate) -->
-        <img src="/icons/html.svg" alt="HTML" />
-        <img src="/icons/css.svg" alt="CSS" />
-        <img src="/icons/javascript.svg" alt="JavaScript" />
-        <img src="/icons/typescript.svg" alt="TypeScript" />
-        <img src="/icons/tailwind.svg" alt="Tailwind" />
-        <img src="/icons/bootstrap.svg" alt="Bootstrap" />
-        <img src="/icons/git.svg" alt="Git" />
+        <img src="icons/html.svg" alt="HTML" />
+        <img src="icons/css.svg" alt="CSS" />
+        <img src="icons/javascript.svg" alt="JavaScript" />
+        <img src="icons/typescript.svg" alt="TypeScript" />
+        <img src="icons/tailwind.svg" alt="Tailwind" />
+        <img src="icons/bootstrap.svg" alt="Bootstrap" />
+        <img src="icons/git.svg" alt="Git" />
         <i class="github fa-brands fa-github" aria-label="GitHub"></i>
-        <img src="/icons/angular.svg" alt="Angular" />
-        <img src="/icons/net.svg" alt=".NET" />
-        <img src="/icons/sql.svg" alt="Microsoft SQL" />
-        <img src="/icons/csharp.svg" alt="C#" />
-        <img src="/icons/vs-code.svg" alt="VS Code" />
-        <img src="/icons/vs.svg" alt="VS" />
-        <img src="/icons/figma.svg" alt="Figma" />
-        <img src="/icons/canva.svg" alt="Canva" />
+        <img src="icons/angular.svg" alt="Angular" />
+        <img src="icons/net.svg" alt=".NET" />
+        <img src="icons/sql.svg" alt="Microsoft SQL" />
+        <img src="icons/csharp.svg" alt="C#" />
+        <img src="icons/vs-code.svg" alt="VS Code" />
+        <img src="icons/vs.svg" alt="VS" />
+        <img src="icons/figma.svg" alt="Figma" />
+        <img src="icons/canva.svg" alt="Canva" />
       </div>
     </div>
-  `,e}function y(){const e=document.createElement("section");return e.className="container services",e.id="services",e.setAttribute("aria-labelledby","services-title"),e.innerHTML=`
+  `),
+    e
+  );
+}
+function y() {
+  const e = document.createElement("section");
+  return (
+    (e.className = "container services"),
+    (e.id = "services"),
+    e.setAttribute("aria-labelledby", "services-title"),
+    (e.innerHTML = `
     <header class="services__header">
       <h2 id="services-title">Services</h2>
       <p class="services__subtitle">
@@ -154,7 +302,17 @@
         </ul>
       </li>
     </ul>
-  `,e}function w(){const e=document.createElement("section");return e.className="container soft-skills",e.id="soft-skills",e.setAttribute("aria-labelledby","soft-skills-title"),e.innerHTML=`
+  `),
+    e
+  );
+}
+function w() {
+  const e = document.createElement("section");
+  return (
+    (e.className = "container soft-skills"),
+    (e.id = "soft-skills"),
+    e.setAttribute("aria-labelledby", "soft-skills-title"),
+    (e.innerHTML = `
     <header class="soft-skills__header">
       <h2 id="soft-skills-title">Soft Skills</h2>
       <p class="soft-skills__subtitle">
@@ -223,7 +381,17 @@
         </p>
       </li>
     </ul>
-  `,e}function j(){const e=document.createElement("section");return e.className="container projects",e.id="projects",e.setAttribute("aria-labelledby","projects-title"),e.innerHTML=`
+  `),
+    e
+  );
+}
+function j() {
+  const e = document.createElement("section");
+  return (
+    (e.className = "container projects"),
+    (e.id = "projects"),
+    e.setAttribute("aria-labelledby", "projects-title"),
+    (e.innerHTML = `
     <div class="projects__header">
       <h2 id="projects-title">Projects</h2>
       <p>Flexible creations where design and code dance together.</p>
@@ -233,7 +401,7 @@
       <!-- Card 1 -->
       <li class="project-card">
         <div class="project-card__image">
-          <img src="/images/EVO-TEAM.webp" alt="EVO-TEAM Website preview" />
+          <img src="images/EVO-TEAM.webp" alt="EVO-TEAM Website preview" />
         </div>
         <div class="project-card__body">
           <div class="chips">
@@ -262,7 +430,7 @@
       <!-- Card 2 -->
       <li class="project-card">
         <div class="project-card__image">
-          <img src="/images/JobLine.webp" alt="JobLine Website preview" />
+          <img src="images/JobLine.webp" alt="JobLine Website preview" />
         </div>
         <div class="project-card__body">
           <div class="chips">
@@ -291,7 +459,7 @@
       <!-- Card 3 -->
       <li class="project-card">
         <div class="project-card__image">
-          <img src="/images/FloppyManWebsite.webp" alt="Floppy Man Portfolio preview" />
+          <img src="images/FloppyManWebsite.webp" alt="Floppy Man Portfolio preview" />
         </div>
         <div class="project-card__body">
           <div class="chips">
@@ -317,7 +485,7 @@
       <!-- Card 4 -->
       <li class="project-card">
         <div class="project-card__image">
-          <img src="/images/WebDesignTemp.webp" alt="Web Design Template preview" />
+          <img src="images/WebDesignTemp.webp" alt="Web Design Template preview" />
         </div>
         <div class="project-card__body">
           <div class="chips">
@@ -339,7 +507,7 @@
       <!-- Card 5 -->
       <li class="project-card">
         <div class="project-card__image">
-          <img src="/images/VanoraMobileDesign.webp" alt="Vanora Mobile App preview" />
+          <img src="images/VanoraMobileDesign.webp" alt="Vanora Mobile App preview" />
         </div>
         <div class="project-card__body">
           <div class="chips">
@@ -358,11 +526,19 @@
         </div>
       </li>
     </ul>
-  `,e}function M(){const e=document.createElement("footer");return e.className="footer",e.innerHTML=`
+  `),
+    e
+  );
+}
+function M() {
+  const e = document.createElement("footer");
+  return (
+    (e.className = "footer"),
+    (e.innerHTML = `
     <div class="container footer__top">
       <a href="#">
           <div class="footer__brand">
-            <img src="/icons/Floppy Man.svg" alt="Floppy Man logo" class="footer__logo" />
+            <img src="icons/Floppy Man.svg" alt="Floppy Man logo" class="footer__logo" />
             <span class="footer__name">Floppy Man</span>
           </div>
       </a>
@@ -384,4 +560,21 @@
       Designed and Developed with flexibility and simplicity by 
       <span class="highlight">Floppy Man</span>.
     </p>
-  `,e}const d=document.querySelector("#navbar");d&&d.appendChild(v());const r=document.querySelector("#app");r&&(r.appendChild(_()),r.appendChild(k()),r.appendChild(y()),r.appendChild(w()),r.appendChild(j()));const p=document.querySelector("#footer");p&&p.appendChild(M());h();u();b();
+  `),
+    e
+  );
+}
+const d = document.querySelector("#navbar");
+d && d.appendChild(v());
+const r = document.querySelector("#app");
+r &&
+  (r.appendChild(_()),
+  r.appendChild(k()),
+  r.appendChild(y()),
+  r.appendChild(w()),
+  r.appendChild(j()));
+const p = document.querySelector("#footer");
+p && p.appendChild(M());
+h();
+u();
+b();
