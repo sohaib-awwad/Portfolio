@@ -2,7 +2,7 @@
 export function createSoftSkillsSection(): HTMLElement {
   const el = document.createElement("section");
   el.className = "container soft-skills";
-  el.id = "soft-skills";
+  el.id = "skills";
   el.setAttribute("aria-labelledby", "soft-skills-title");
 
   el.innerHTML = `

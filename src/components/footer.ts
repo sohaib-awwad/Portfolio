@@ -4,7 +4,7 @@ export function createFooter(): HTMLElement {
   el.className = "footer";
   el.innerHTML = `
     <div class="container footer__top">
-      <a href="#">
+      <a class="brand" href="/" aria-label="Floppy Man home">
           <div class="footer__brand">
             <img src="icons/Floppy Man.svg" alt="Floppy Man logo" class="footer__logo" />
             <span class="footer__name">Floppy Man</span>
@@ -16,9 +16,9 @@ export function createFooter(): HTMLElement {
       </p>
 
       <div class="footer__social">
-        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/sohaib-awwad-619788353/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/sohaib-awwad" aria-label="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/sohaib_a003?igsh=MTYyajczaXp2Y253YQ==" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
       </div>
     </div>
 

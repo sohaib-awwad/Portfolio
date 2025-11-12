@@ -2,6 +2,7 @@
 export function createHero(): HTMLElement {
   const el = document.createElement("section");
   el.className = "container hero";
+  el.id = "about";
   el.innerHTML = `
     <div class="hero-content">
       <h1>
@@ -13,15 +14,15 @@ export function createHero(): HTMLElement {
 
       <div class="hero-buttons">
         <a href="#" class="btn primary">Let's Work!</a>
-        <a href="#" class="btn secondary">
+        <a href="data/cv.pdf" download="Sohaib_Awwad_CV.pdf" target="_blank" class="btn secondary">
           <i class="fa-solid fa-download"></i> Download my CV
         </a>
       </div>
 
       <div class="social-icons">
-        <a href="www.linkedin.com/in/sohaib-awwad-619788353" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://github.com/sohaib-awwad" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/sohaib-awwad-619788353/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/sohaib-awwad" aria-label="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/sohaib_a003?igsh=MTYyajczaXp2Y253YQ==" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
       </div>
     </div>
 

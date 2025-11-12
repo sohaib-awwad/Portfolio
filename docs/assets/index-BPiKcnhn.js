@@ -1,4 +1,4 @@
-(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))t(s);new MutationObserver(s=>{for(const a of s)if(a.type==="childList")for(const l of a.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&t(l)}).observe(document,{childList:!0,subtree:!0});function c(s){const a={};return s.integrity&&(a.integrity=s.integrity),s.referrerPolicy&&(a.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?a.credentials="include":s.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function t(s){if(s.ep)return;s.ep=!0;const a=c(s);fetch(s.href,a)}})();const f="theme",m=()=>matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";function g(e){document.documentElement.setAttribute("data-theme",e)}function h(){const e=localStorage.getItem(f)||m();g(e)}function u(){const e=Array.from(document.querySelectorAll(".theme-toggle"));if(!e.length)return;const i=()=>{const t=(document.documentElement.getAttribute("data-theme")||"light")==="dark";e.forEach(s=>{s.innerHTML=t?'<i class="fa-solid fa-sun" aria-hidden="true"></i>':'<i class="fa-solid fa-moon" aria-hidden="true"></i>'})};i();const c=()=>{const s=(document.documentElement.getAttribute("data-theme")||"light")==="dark"?"light":"dark";g(s),localStorage.setItem(f,s),i()};e.forEach(t=>t.addEventListener("click",c))}function v(){const e=document.createElement("nav");return e.className="navbar",e.innerHTML=`
+(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))t(a);new MutationObserver(a=>{for(const s of a)if(s.type==="childList")for(const l of s.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&t(l)}).observe(document,{childList:!0,subtree:!0});function c(a){const s={};return a.integrity&&(s.integrity=a.integrity),a.referrerPolicy&&(s.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?s.credentials="include":a.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function t(a){if(a.ep)return;a.ep=!0;const s=c(a);fetch(a.href,s)}})();const g="theme",m=()=>matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";function f(e){document.documentElement.setAttribute("data-theme",e)}function h(){const e=localStorage.getItem(g)||m();f(e)}function u(){const e=Array.from(document.querySelectorAll(".theme-toggle"));if(!e.length)return;const i=()=>{const t=(document.documentElement.getAttribute("data-theme")||"light")==="dark";e.forEach(a=>{a.innerHTML=t?'<i class="fa-solid fa-sun" aria-hidden="true"></i>':'<i class="fa-solid fa-moon" aria-hidden="true"></i>'})};i();const c=()=>{const a=(document.documentElement.getAttribute("data-theme")||"light")==="dark"?"light":"dark";f(a),localStorage.setItem(g,a),i()};e.forEach(t=>t.addEventListener("click",c))}function b(){const e=document.createElement("nav");return e.className="navbar",e.innerHTML=`
     <div class="container navbar__inner">
       <!-- Brand -->
       <a class="brand" href="/" aria-label="Floppy Man home">
@@ -10,6 +10,7 @@
       <div class="menu menu--inline" role="navigation" aria-label="Primary">
         <a class="menu__link" href="#about">About</a>
         <a class="menu__link" href="#services">Services</a>
+        <a class="menu__link" href="#skills">Skills</a>
         <a class="menu__link" href="#projects">Projects</a>
         <a class="btn-primary" href="#contact">Contact</a>
         <button class="theme-toggle" aria-label="Toggle theme">
@@ -32,10 +33,11 @@
     <div id="mobileMenu" class="mobile-menu">
       <a class="menu__link" href="#about">About</a>
       <a class="menu__link" href="#services">Services</a>
+      <a class="menu__link" href="#skills">Skills</a>
       <a class="menu__link" href="#projects">Projects</a>
       <a class="btn-primary mobile-cta" href="#contact">Contact</a>
     </div>
-  `,e}function b(){const e=document.getElementById("burger"),i=document.getElementById("mobileMenu");if(!e||!i)return;const c=()=>{i.classList.add("is-open"),e.setAttribute("aria-expanded","true"),document.body.style.overflow="hidden"},t=()=>{i.classList.remove("is-open"),e.setAttribute("aria-expanded","false"),document.body.style.overflow=""},s=()=>{i.classList.contains("is-open")?t():c()};e.addEventListener("click",a=>{a.stopPropagation(),s()}),i.addEventListener("click",a=>{a.target.tagName==="A"&&t()}),document.addEventListener("keydown",a=>{a.key==="Escape"&&t()}),document.addEventListener("click",a=>{const l=a.target,o=i.contains(l),n=e.contains(l);i.classList.contains("is-open")&&!o&&!n&&t()}),matchMedia("(min-width: 1025px)").addEventListener("change",a=>{a.matches&&t()})}function _(){const e=document.createElement("section");e.className="container hero",e.innerHTML=`
+  `,e}function v(){const e=document.getElementById("burger"),i=document.getElementById("mobileMenu");if(!e||!i)return;const c=()=>{i.classList.add("is-open"),e.setAttribute("aria-expanded","true"),document.body.style.overflow="hidden"},t=()=>{i.classList.remove("is-open"),e.setAttribute("aria-expanded","false"),document.body.style.overflow=""},a=()=>{i.classList.contains("is-open")?t():c()};e.addEventListener("click",s=>{s.stopPropagation(),a()}),i.addEventListener("click",s=>{s.target.tagName==="A"&&t()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&t()}),document.addEventListener("click",s=>{const l=s.target,o=i.contains(l),n=e.contains(l);i.classList.contains("is-open")&&!o&&!n&&t()}),matchMedia("(min-width: 1025px)").addEventListener("change",s=>{s.matches&&t()})}function _(){const e=document.createElement("section");e.className="container hero",e.id="about",e.innerHTML=`
     <div class="hero-content">
       <h1>
         Hi, I'm<br/><span class="gradient-text typing"></span>
@@ -46,15 +48,15 @@
 
       <div class="hero-buttons">
         <a href="#" class="btn primary">Let's Work!</a>
-        <a href="#" class="btn secondary">
+        <a href="data/cv.pdf" download="Sohaib_Awwad_CV.pdf" target="_blank" class="btn secondary">
           <i class="fa-solid fa-download"></i> Download my CV
         </a>
       </div>
 
       <div class="social-icons">
-        <a href="www.linkedin.com/in/sohaib-awwad-619788353" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://github.com/sohaib-awwad" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/sohaib-awwad-619788353/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/sohaib-awwad" aria-label="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/sohaib_a003?igsh=MTYyajczaXp2Y253YQ==" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
       </div>
     </div>
 
@@ -63,7 +65,7 @@
         <img src="images/Sohaib-suit.webp" alt="Sohaib Awwad" />
       </div>
     </div>
-  `;const i=e.querySelector(".typing");if(i){const c=["Sohaib Awwad","Floppy Man"];let t=0,s=0,a=!1;const l=()=>{const o=c[t],n=o.substring(0,s);i.textContent=n,!a&&s<o.length?(s++,setTimeout(l,120)):a&&s>0?(s--,setTimeout(l,80)):a?(a=!1,t=(t+1)%c.length,setTimeout(l,400)):(a=!0,setTimeout(l,1500))};l()}return e}function k(){const e=document.createElement("section");return e.className="container stack",e.innerHTML=`
+  `;const i=e.querySelector(".typing");if(i){const c=["Sohaib Awwad","Floppy Man"];let t=0,a=0,s=!1;const l=()=>{const o=c[t],n=o.substring(0,a);i.textContent=n,!s&&a<o.length?(a++,setTimeout(l,120)):s&&a>0?(a--,setTimeout(l,80)):s?(s=!1,t=(t+1)%c.length,setTimeout(l,400)):(s=!0,setTimeout(l,1500))};l()}return e}function k(){const e=document.createElement("section");return e.className="container stack",e.innerHTML=`
     <h2>Tech Stack</h2>
     <p>Technologies that keep my code flexible and my ideas flowing.</p>
 
@@ -154,7 +156,7 @@
         </ul>
       </li>
     </ul>
-  `,e}function w(){const e=document.createElement("section");return e.className="container soft-skills",e.id="soft-skills",e.setAttribute("aria-labelledby","soft-skills-title"),e.innerHTML=`
+  `,e}function w(){const e=document.createElement("section");return e.className="container soft-skills",e.id="skills",e.setAttribute("aria-labelledby","soft-skills-title"),e.innerHTML=`
     <header class="soft-skills__header">
       <h2 id="soft-skills-title">Soft Skills</h2>
       <p class="soft-skills__subtitle">
@@ -357,7 +359,7 @@
     </ul>
   `,e}function M(){const e=document.createElement("footer");return e.className="footer",e.innerHTML=`
     <div class="container footer__top">
-      <a href="#">
+      <a class="brand" href="/" aria-label="Floppy Man home">
           <div class="footer__brand">
             <img src="icons/Floppy Man.svg" alt="Floppy Man logo" class="footer__logo" />
             <span class="footer__name">Floppy Man</span>
@@ -369,9 +371,9 @@
       </p>
 
       <div class="footer__social">
-        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/sohaib-awwad-619788353/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/sohaib-awwad" aria-label="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/sohaib_a003?igsh=MTYyajczaXp2Y253YQ==" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
       </div>
     </div>
 
@@ -381,4 +383,4 @@
       Designed and Developed with flexibility and simplicity by 
       <span class="highlight">Floppy Man</span>.
     </p>
-  `,e}const d=document.querySelector("#navbar");d&&d.appendChild(v());const r=document.querySelector("#app");r&&(r.appendChild(_()),r.appendChild(k()),r.appendChild(y()),r.appendChild(w()),r.appendChild(j()));const p=document.querySelector("#footer");p&&p.appendChild(M());h();u();b();
+  `,e}const d=document.querySelector("#navbar");d&&d.appendChild(b());const r=document.querySelector("#app");r&&(r.appendChild(_()),r.appendChild(k()),r.appendChild(y()),r.appendChild(w()),r.appendChild(j()));const p=document.querySelector("#footer");p&&p.appendChild(M());h();u();v();

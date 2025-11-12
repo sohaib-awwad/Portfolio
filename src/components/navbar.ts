@@ -14,6 +14,7 @@ export function createNavbar(): HTMLElement {
       <div class="menu menu--inline" role="navigation" aria-label="Primary">
         <a class="menu__link" href="#about">About</a>
         <a class="menu__link" href="#services">Services</a>
+        <a class="menu__link" href="#skills">Skills</a>
         <a class="menu__link" href="#projects">Projects</a>
         <a class="btn-primary" href="#contact">Contact</a>
         <button class="theme-toggle" aria-label="Toggle theme">
@@ -36,6 +37,7 @@ export function createNavbar(): HTMLElement {
     <div id="mobileMenu" class="mobile-menu">
       <a class="menu__link" href="#about">About</a>
       <a class="menu__link" href="#services">Services</a>
+      <a class="menu__link" href="#skills">Skills</a>
       <a class="menu__link" href="#projects">Projects</a>
       <a class="btn-primary mobile-cta" href="#contact">Contact</a>
     </div>
