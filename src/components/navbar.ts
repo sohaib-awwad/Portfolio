@@ -6,7 +6,7 @@ export function createNavbar(): HTMLElement {
     <div class="container navbar__inner">
       <!-- Brand -->
       <a class="brand" href="/" aria-label="Floppy Man home">
-        <img class="brand__logo" src="/icons/Floppy Man.svg" alt="Floppy Man logo" width="44" height="44" />
+        <img class="brand__logo" src="icons/Floppy Man.svg" alt="Floppy Man logo" width="44" height="44" />
         <span class="brand__name">Floppy Man</span>
       </a>
 

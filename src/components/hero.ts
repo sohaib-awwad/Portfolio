@@ -27,7 +27,7 @@ export function createHero(): HTMLElement {
 
     <div class="hero-right">
       <div class="avatar">
-        <img src="/images/Sohaib-suit.webp" alt="Sohaib Awwad" />
+        <img src="images/Sohaib-suit.webp" alt="Sohaib Awwad" />
       </div>
     </div>
   `;

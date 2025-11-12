@@ -6,7 +6,7 @@ export function createFooter(): HTMLElement {
     <div class="container footer__top">
       <a href="#">
           <div class="footer__brand">
-            <img src="/icons/Floppy Man.svg" alt="Floppy Man logo" class="footer__logo" />
+            <img src="icons/Floppy Man.svg" alt="Floppy Man logo" class="footer__logo" />
             <span class="footer__name">Floppy Man</span>
           </div>
       </a>

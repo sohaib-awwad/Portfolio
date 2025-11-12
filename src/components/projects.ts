@@ -15,7 +15,7 @@ export function createProjectsSection(): HTMLElement {
       <!-- Card 1 -->
       <li class="project-card">
         <div class="project-card__image">
-          <img src="/images/EVO-TEAM.webp" alt="EVO-TEAM Website preview" />
+          <img src="images/EVO-TEAM.webp" alt="EVO-TEAM Website preview" />
         </div>
         <div class="project-card__body">
           <div class="chips">
@@ -44,7 +44,7 @@ export function createProjectsSection(): HTMLElement {
       <!-- Card 2 -->
       <li class="project-card">
         <div class="project-card__image">
-          <img src="/images/JobLine.webp" alt="JobLine Website preview" />
+          <img src="images/JobLine.webp" alt="JobLine Website preview" />
         </div>
         <div class="project-card__body">
           <div class="chips">
@@ -73,7 +73,7 @@ export function createProjectsSection(): HTMLElement {
       <!-- Card 3 -->
       <li class="project-card">
         <div class="project-card__image">
-          <img src="/images/FloppyManWebsite.webp" alt="Floppy Man Portfolio preview" />
+          <img src="images/FloppyManWebsite.webp" alt="Floppy Man Portfolio preview" />
         </div>
         <div class="project-card__body">
           <div class="chips">
@@ -99,7 +99,7 @@ export function createProjectsSection(): HTMLElement {
       <!-- Card 4 -->
       <li class="project-card">
         <div class="project-card__image">
-          <img src="/images/WebDesignTemp.webp" alt="Web Design Template preview" />
+          <img src="images/WebDesignTemp.webp" alt="Web Design Template preview" />
         </div>
         <div class="project-card__body">
           <div class="chips">
@@ -121,7 +121,7 @@ export function createProjectsSection(): HTMLElement {
       <!-- Card 5 -->
       <li class="project-card">
         <div class="project-card__image">
-          <img src="/images/VanoraMobileDesign.webp" alt="Vanora Mobile App preview" />
+          <img src="images/VanoraMobileDesign.webp" alt="Vanora Mobile App preview" />
         </div>
         <div class="project-card__body">
           <div class="chips">
