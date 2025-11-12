@@ -31,11 +31,8 @@ export function createProjectsSection(): HTMLElement {
             <a href="#" class="project-link" aria-label="Live Preview">
               <i class="fa-solid fa-link"></i> Live
             </a>
-            <a href="#" class="project-link" aria-label="View Figma Design">
+            <a href="https://www.figma.com/design/c93u2qG5f9UVq0U57SAEKs/Evo-Team?node-id=0-1&t=gQcHQNbCr9XFqtDu-1" target="_blank" class="project-link" aria-label="View Figma Design">
               <i class="fa-brands fa-figma"></i> Design
-            </a>
-            <a href="#" class="project-link" aria-label="View GitHub Code">
-              <i class="fa-brands fa-github"></i> Code
             </a>
           </div>
         </div>
@@ -57,10 +54,10 @@ export function createProjectsSection(): HTMLElement {
             I designed three user interfaces: employee, employer, and admin.
           </p>
           <div class="project-card__links">
-            <a href="#" class="project-link" aria-label="View Figma Design">
+            <a href="https://www.figma.com/design/mAa4QAVAXIM1vpxGuIlW98/Sohaib-prototype--Copy-?node-id=0-1&t=Wy6a7BWNuZRyIFEW-1" target="_blank" class="project-link" aria-label="View Figma Design">
               <i class="fa-brands fa-figma"></i> Design
             </a>
-            <a href="#" class="project-link" aria-label="View GitHub Code">
+            <a href="https://github.com/sohaib-awwad/JobLine.git" target="_blank" class="project-link" aria-label="View GitHub Code">
               <i class="fa-brands fa-github"></i> Code
             </a>
           </div>
@@ -83,10 +80,10 @@ export function createProjectsSection(): HTMLElement {
             Designed to showcase my projects and skills, with a clean, flexible layout.
           </p>
           <div class="project-card__links">
-            <a href="#" class="project-link" aria-label="View Figma Design">
+            <a href="https://www.figma.com/design/MFk1B8KcZ7frpbhsaQDYlT/Floppy-Man-Website?node-id=0-1&t=b3g49nZt235Pey1a-1" target="_blank" class="project-link" aria-label="View Figma Design">
               <i class="fa-brands fa-figma"></i> Design
             </a>
-            <a href="#" class="project-link" aria-label="View GitHub Code">
+            <a href="https://github.com/sohaib-awwad/Portfolio.git" target="_blank" class="project-link" aria-label="View GitHub Code">
               <i class="fa-brands fa-github"></i> Code
             </a>
           </div>
@@ -108,7 +105,7 @@ export function createProjectsSection(): HTMLElement {
             focusing on layout, color balance, and user flow.
           </p>
           <div class="project-card__links">
-            <a href="#" class="project-link" aria-label="View Figma Design">
+            <a href="https://www.figma.com/design/EX7TuP1Yrf2onDDk3YrsWB/Web-Design-Temp?node-id=0-1&t=bs610ApokopeBDS1-1" target="_blank" class="project-link" aria-label="View Figma Design">
               <i class="fa-brands fa-figma"></i> Design
             </a>
           </div>
@@ -130,7 +127,7 @@ export function createProjectsSection(): HTMLElement {
             I designed the brand and an elegant interface to reflect its warm feel.
           </p>
           <div class="project-card__links">
-            <a href="#" class="project-link" aria-label="View Figma Design">
+            <a href="https://www.figma.com/design/DFlFGux6SgNDeZIImCajRZ/Vanilla-App--Copy-?node-id=0-1&t=TUYfoT2O1jVKyfFw-1" target="_blank" class="project-link" aria-label="View Figma Design">
               <i class="fa-brands fa-figma"></i> Design
             </a>
           </div>

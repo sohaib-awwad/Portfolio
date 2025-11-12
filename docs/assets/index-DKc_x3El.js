@@ -1,4 +1,4 @@
-(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))t(a);new MutationObserver(a=>{for(const s of a)if(s.type==="childList")for(const l of s.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&t(l)}).observe(document,{childList:!0,subtree:!0});function c(a){const s={};return a.integrity&&(s.integrity=a.integrity),a.referrerPolicy&&(s.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?s.credentials="include":a.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function t(a){if(a.ep)return;a.ep=!0;const s=c(a);fetch(a.href,s)}})();const g="theme",m=()=>matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";function f(e){document.documentElement.setAttribute("data-theme",e)}function h(){const e=localStorage.getItem(g)||m();f(e)}function u(){const e=Array.from(document.querySelectorAll(".theme-toggle"));if(!e.length)return;const i=()=>{const t=(document.documentElement.getAttribute("data-theme")||"light")==="dark";e.forEach(a=>{a.innerHTML=t?'<i class="fa-solid fa-sun" aria-hidden="true"></i>':'<i class="fa-solid fa-moon" aria-hidden="true"></i>'})};i();const c=()=>{const a=(document.documentElement.getAttribute("data-theme")||"light")==="dark"?"light":"dark";f(a),localStorage.setItem(g,a),i()};e.forEach(t=>t.addEventListener("click",c))}function b(){const e=document.createElement("nav");return e.className="navbar",e.innerHTML=`
+(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))t(a);new MutationObserver(a=>{for(const s of a)if(s.type==="childList")for(const l of s.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&t(l)}).observe(document,{childList:!0,subtree:!0});function c(a){const s={};return a.integrity&&(s.integrity=a.integrity),a.referrerPolicy&&(s.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?s.credentials="include":a.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function t(a){if(a.ep)return;a.ep=!0;const s=c(a);fetch(a.href,s)}})();const g="theme",f=()=>matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";function m(e){document.documentElement.setAttribute("data-theme",e)}function h(){const e=localStorage.getItem(g)||f();m(e)}function b(){const e=Array.from(document.querySelectorAll(".theme-toggle"));if(!e.length)return;const i=()=>{const t=(document.documentElement.getAttribute("data-theme")||"light")==="dark";e.forEach(a=>{a.innerHTML=t?'<i class="fa-solid fa-sun" aria-hidden="true"></i>':'<i class="fa-solid fa-moon" aria-hidden="true"></i>'})};i();const c=()=>{const a=(document.documentElement.getAttribute("data-theme")||"light")==="dark"?"light":"dark";m(a),localStorage.setItem(g,a),i()};e.forEach(t=>t.addEventListener("click",c))}function u(){const e=document.createElement("nav");return e.className="navbar",e.innerHTML=`
     <div class="container navbar__inner">
       <!-- Brand -->
       <a class="brand" href="/" aria-label="Floppy Man home">
@@ -108,7 +108,7 @@
         <img src="icons/canva.svg" alt="Canva" />
       </div>
     </div>
-  `,e}function y(){const e=document.createElement("section");return e.className="container services",e.id="services",e.setAttribute("aria-labelledby","services-title"),e.innerHTML=`
+  `,e}function w(){const e=document.createElement("section");return e.className="container services",e.id="services",e.setAttribute("aria-labelledby","services-title"),e.innerHTML=`
     <header class="services__header">
       <h2 id="services-title">Services</h2>
       <p class="services__subtitle">
@@ -156,7 +156,7 @@
         </ul>
       </li>
     </ul>
-  `,e}function w(){const e=document.createElement("section");return e.className="container soft-skills",e.id="skills",e.setAttribute("aria-labelledby","soft-skills-title"),e.innerHTML=`
+  `,e}function y(){const e=document.createElement("section");return e.className="container soft-skills",e.id="skills",e.setAttribute("aria-labelledby","soft-skills-title"),e.innerHTML=`
     <header class="soft-skills__header">
       <h2 id="soft-skills-title">Soft Skills</h2>
       <p class="soft-skills__subtitle">
@@ -251,11 +251,8 @@
             <a href="#" class="project-link" aria-label="Live Preview">
               <i class="fa-solid fa-link"></i> Live
             </a>
-            <a href="#" class="project-link" aria-label="View Figma Design">
+            <a href="https://www.figma.com/design/c93u2qG5f9UVq0U57SAEKs/Evo-Team?node-id=0-1&t=gQcHQNbCr9XFqtDu-1" target="_blank" class="project-link" aria-label="View Figma Design">
               <i class="fa-brands fa-figma"></i> Design
-            </a>
-            <a href="#" class="project-link" aria-label="View GitHub Code">
-              <i class="fa-brands fa-github"></i> Code
             </a>
           </div>
         </div>
@@ -277,10 +274,10 @@
             I designed three user interfaces: employee, employer, and admin.
           </p>
           <div class="project-card__links">
-            <a href="#" class="project-link" aria-label="View Figma Design">
+            <a href="https://www.figma.com/design/mAa4QAVAXIM1vpxGuIlW98/Sohaib-prototype--Copy-?node-id=0-1&t=Wy6a7BWNuZRyIFEW-1" target="_blank" class="project-link" aria-label="View Figma Design">
               <i class="fa-brands fa-figma"></i> Design
             </a>
-            <a href="#" class="project-link" aria-label="View GitHub Code">
+            <a href="https://github.com/sohaib-awwad/JobLine.git" target="_blank" class="project-link" aria-label="View GitHub Code">
               <i class="fa-brands fa-github"></i> Code
             </a>
           </div>
@@ -303,10 +300,10 @@
             Designed to showcase my projects and skills, with a clean, flexible layout.
           </p>
           <div class="project-card__links">
-            <a href="#" class="project-link" aria-label="View Figma Design">
+            <a href="https://www.figma.com/design/MFk1B8KcZ7frpbhsaQDYlT/Floppy-Man-Website?node-id=0-1&t=b3g49nZt235Pey1a-1" target="_blank" class="project-link" aria-label="View Figma Design">
               <i class="fa-brands fa-figma"></i> Design
             </a>
-            <a href="#" class="project-link" aria-label="View GitHub Code">
+            <a href="https://github.com/sohaib-awwad/Portfolio.git" target="_blank" class="project-link" aria-label="View GitHub Code">
               <i class="fa-brands fa-github"></i> Code
             </a>
           </div>
@@ -328,7 +325,7 @@
             focusing on layout, color balance, and user flow.
           </p>
           <div class="project-card__links">
-            <a href="#" class="project-link" aria-label="View Figma Design">
+            <a href="https://www.figma.com/design/EX7TuP1Yrf2onDDk3YrsWB/Web-Design-Temp?node-id=0-1&t=bs610ApokopeBDS1-1" target="_blank" class="project-link" aria-label="View Figma Design">
               <i class="fa-brands fa-figma"></i> Design
             </a>
           </div>
@@ -350,14 +347,14 @@
             I designed the brand and an elegant interface to reflect its warm feel.
           </p>
           <div class="project-card__links">
-            <a href="#" class="project-link" aria-label="View Figma Design">
+            <a href="https://www.figma.com/design/DFlFGux6SgNDeZIImCajRZ/Vanilla-App--Copy-?node-id=0-1&t=TUYfoT2O1jVKyfFw-1" target="_blank" class="project-link" aria-label="View Figma Design">
               <i class="fa-brands fa-figma"></i> Design
             </a>
           </div>
         </div>
       </li>
     </ul>
-  `,e}function M(){const e=document.createElement("footer");return e.className="footer",e.innerHTML=`
+  `,e}function S(){const e=document.createElement("footer");return e.className="footer",e.innerHTML=`
     <div class="container footer__top">
       <a class="brand" href="/" aria-label="Floppy Man home">
           <div class="footer__brand">
@@ -383,4 +380,4 @@
       Designed and Developed with flexibility and simplicity by 
       <span class="highlight">Floppy Man</span>.
     </p>
-  `,e}const d=document.querySelector("#navbar");d&&d.appendChild(b());const r=document.querySelector("#app");r&&(r.appendChild(_()),r.appendChild(k()),r.appendChild(y()),r.appendChild(w()),r.appendChild(j()));const p=document.querySelector("#footer");p&&p.appendChild(M());h();u();v();
+  `,e}const d=document.querySelector("#navbar");d&&d.appendChild(u());const r=document.querySelector("#app");r&&(r.appendChild(_()),r.appendChild(k()),r.appendChild(w()),r.appendChild(y()),r.appendChild(j()));const p=document.querySelector("#footer");p&&p.appendChild(S());h();b();v();
