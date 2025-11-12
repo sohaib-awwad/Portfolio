@@ -275,9 +275,6 @@
             I designed three user interfaces: employee, employer, and admin.
           </p>
           <div class="project-card__links">
-            <a href="#" class="project-link" aria-label="Live Preview">
-              <i class="fa-solid fa-link"></i> Live
-            </a>
             <a href="#" class="project-link" aria-label="View Figma Design">
               <i class="fa-brands fa-figma"></i> Design
             </a>
