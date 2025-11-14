@@ -87,11 +87,14 @@ export function initContactForm() {
   const result = form.querySelector(".form-result") as HTMLSpanElement | null;
 
   const setError = (id: string, msg: string) => {
-    const span = form.querySelector(`.error[data-for="${id}"]`) as HTMLSpanElement | null;
+    const span = form.querySelector(
+      `.error[data-for="${id}"]`
+    ) as HTMLSpanElement | null;
     if (span) span.textContent = msg;
   };
 
-  const clearErrors = () => form.querySelectorAll(".error").forEach((el) => (el.textContent = ""));
+  const clearErrors = () =>
+    form.querySelectorAll(".error").forEach((el) => (el.textContent = ""));
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -99,29 +102,49 @@ export function initContactForm() {
     if (result) result.textContent = "";
 
     // honeypot check
-    const hp = (form.querySelector('.hp-field') as HTMLInputElement).value.trim();
+    const hp = (
+      form.querySelector(".hp-field") as HTMLInputElement
+    ).value.trim();
     if (hp) return; // bot
 
     const name = (form.querySelector("#name") as HTMLInputElement).value.trim();
-    const email = (form.querySelector("#email") as HTMLInputElement).value.trim();
-    const subject = (form.querySelector("#subject") as HTMLInputElement).value.trim();
-    const message = (form.querySelector("#message") as HTMLTextAreaElement).value.trim();
+    const email = (
+      form.querySelector("#email") as HTMLInputElement
+    ).value.trim();
+    const subject = (
+      form.querySelector("#subject") as HTMLInputElement
+    ).value.trim();
+    const message = (
+      form.querySelector("#message") as HTMLTextAreaElement
+    ).value.trim();
 
     // basic validation
     let ok = true;
-    if (!name) { setError("name", "Please enter your name."); ok = false; }
-    if (!email || !/^\S+@\S+\.\S+$/.test(email)) { setError("email", "Please enter a valid email."); ok = false; }
-    if (!subject) { setError("subject", "Please add a subject."); ok = false; }
-    if (!message || message.length < 10) { setError("message", "Message should be at least 10 characters."); ok = false; }
+    if (!name) {
+      setError("name", "Please enter your name.");
+      ok = false;
+    }
+    if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+      setError("email", "Please enter a valid email.");
+      ok = false;
+    }
+    if (!subject) {
+      setError("subject", "Please add a subject.");
+      ok = false;
+    }
+    if (!message || message.length < 10) {
+      setError("message", "Message should be at least 10 characters.");
+      ok = false;
+    }
     if (!ok) return;
 
     // MAILTO submission (works without backend)
-    const to = "you@example.com"; // TODO: replace with your email
+    const to = "sohaibawwad8@gmail.com";
     const body =
-      `From: ${name} <${email}>\n` +
-      `Subject: ${subject}\n\n` +
-      `${message}`;
-    const href = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      `From: ${name} <${email}>\n` + `Subject: ${subject}\n\n` + `${message}`;
+    const href = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
 
     // open mail client
     window.location.href = href;
