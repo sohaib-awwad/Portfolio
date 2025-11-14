@@ -1,0 +1,158 @@
+.contact {
+  margin-top: 96px;
+}
+
+.contact__header {
+  text-align: center;
+  margin-bottom: clamp(24px, 4vw, 48px);
+}
+.contact__header h2 {
+  margin: 0 0 6px;
+  font-size: 1.8rem;
+  text-align: center;
+  color: var(--text);
+}
+.contact__subtitle {
+  color: var(--muted-text);
+  margin: 0;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.contact__info {
+  background: var(--surface);
+  border-radius: var(--radius-m, 12px);
+  box-shadow: var(--shadow-s);
+  padding: 20px;
+}
+.contact__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: grid;
+  gap: 12px;
+}
+.contact__list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+}
+.contact__list a {
+  color: var(--primary);
+  text-decoration: none;
+}
+.contact__list a:hover {
+  color: var(--secondary);
+}
+
+.contact__social {
+  display: flex;
+  gap: 14px;
+  margin-top: 6px;
+}
+.contact__social a {
+  font-size: 1.2rem;
+  color: var(--primary);
+  transition: transform var(--dur-1, 150ms) var(--ease, ease),
+    color var(--dur-1, 150ms) var(--ease, ease);
+}
+.contact__social a:hover {
+  color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.contact__note {
+  color: var(--muted-text);
+  margin: 8px 0 0;
+}
+
+/* Form */
+.contact__form {
+  background: var(--surface);
+  border-radius: var(--radius-m, 12px);
+  box-shadow: var(--shadow-s);
+  padding: 20px;
+}
+.hp-field {
+  display: none !important;
+}
+
+.field {
+  margin-bottom: 14px;
+}
+.field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.field input,
+.field textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  border-radius: var(--radius-s, 8px);
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color var(--dur-1, 150ms) var(--ease, ease),
+    box-shadow var(--dur-1, 150ms) var(--ease, ease);
+}
+:root[data-theme="dark"] .field input,
+:root[data-theme="dark"] .field textarea {
+  background: #111416;
+}
+.field input:focus,
+.field textarea:focus {
+  border-color: color-mix(in oklab, var(--secondary) 70%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--secondary) 25%, transparent);
+}
+
+.error {
+  display: block;
+  font-size: 0.85rem;
+  color: #c0392b;
+  min-height: 1.1em;
+  margin-top: 4px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+.btn-contact {
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: var(--radius-l, 22px);
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(245, 118, 39, 0.4);
+  transition: box-shadow 0.3s ease;
+}
+.btn-contact:hover {
+  box-shadow: 0 4px 18px rgba(245, 118, 39, 0.6);
+}
+
+.form-result {
+  color: var(--muted-text);
+}
+.form-result.ok {
+  color: var(--secondary);
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+}

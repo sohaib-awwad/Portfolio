@@ -6,6 +6,7 @@ import "./styles/techstack.css";
 import "./styles/services.css";
 import "./styles/softskills.css";
 import "./styles/projects.css";
+import "./styles/contact.css";
 import "./styles/footer.css";
 
 import { initTheme, bindThemeToggles } from "./utils/theme";
@@ -15,6 +16,7 @@ import { createStack } from "./components/techstack";
 import { createServicesSection } from "./components/services";
 import { createSoftSkillsSection } from "./components/softskills";
 import { createProjectsSection } from "./components/projects";
+import { createContactSection, initContactForm } from "./components/contact";
 import { createFooter } from "./components/footer";
 
 const navbarMount = document.querySelector<HTMLElement>("#navbar");
@@ -29,6 +31,8 @@ if (app) {
   app.appendChild(createServicesSection());
   app.appendChild(createSoftSkillsSection());
   app.appendChild(createProjectsSection());
+  app.appendChild(createContactSection());
+  initContactForm();
 }
 
 const footerMount = document.querySelector<HTMLElement>("#footer");

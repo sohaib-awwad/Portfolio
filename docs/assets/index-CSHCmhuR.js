@@ -1,4 +1,4 @@
-(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))t(a);new MutationObserver(a=>{for(const s of a)if(s.type==="childList")for(const l of s.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&t(l)}).observe(document,{childList:!0,subtree:!0});function c(a){const s={};return a.integrity&&(s.integrity=a.integrity),a.referrerPolicy&&(s.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?s.credentials="include":a.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function t(a){if(a.ep)return;a.ep=!0;const s=c(a);fetch(a.href,s)}})();const g="theme",f=()=>matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";function m(e){document.documentElement.setAttribute("data-theme",e)}function h(){const e=localStorage.getItem(g)||f();m(e)}function b(){const e=Array.from(document.querySelectorAll(".theme-toggle"));if(!e.length)return;const i=()=>{const t=(document.documentElement.getAttribute("data-theme")||"light")==="dark";e.forEach(a=>{a.innerHTML=t?'<i class="fa-solid fa-sun" aria-hidden="true"></i>':'<i class="fa-solid fa-moon" aria-hidden="true"></i>'})};i();const c=()=>{const a=(document.documentElement.getAttribute("data-theme")||"light")==="dark"?"light":"dark";m(a),localStorage.setItem(g,a),i()};e.forEach(t=>t.addEventListener("click",c))}function u(){const e=document.createElement("nav");return e.className="navbar",e.innerHTML=`
+(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))t(a);new MutationObserver(a=>{for(const s of a)if(s.type==="childList")for(const l of s.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&t(l)}).observe(document,{childList:!0,subtree:!0});function c(a){const s={};return a.integrity&&(s.integrity=a.integrity),a.referrerPolicy&&(s.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?s.credentials="include":a.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function t(a){if(a.ep)return;a.ep=!0;const s=c(a);fetch(a.href,s)}})();const g="theme",_=()=>matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";function u(e){document.documentElement.setAttribute("data-theme",e)}function y(){const e=localStorage.getItem(g)||_();u(e)}function w(){const e=Array.from(document.querySelectorAll(".theme-toggle"));if(!e.length)return;const i=()=>{const t=(document.documentElement.getAttribute("data-theme")||"light")==="dark";e.forEach(a=>{a.innerHTML=t?'<i class="fa-solid fa-sun" aria-hidden="true"></i>':'<i class="fa-solid fa-moon" aria-hidden="true"></i>'})};i();const c=()=>{const a=(document.documentElement.getAttribute("data-theme")||"light")==="dark"?"light":"dark";u(a),localStorage.setItem(g,a),i()};e.forEach(t=>t.addEventListener("click",c))}function k(){const e=document.createElement("nav");return e.className="navbar",e.innerHTML=`
     <div class="container navbar__inner">
       <!-- Brand -->
       <a class="brand" href="/" aria-label="Floppy Man home">
@@ -37,7 +37,7 @@
       <a class="menu__link" href="#projects">Projects</a>
       <a class="btn-primary mobile-cta" href="#contact">Contact</a>
     </div>
-  `,e}function v(){const e=document.getElementById("burger"),i=document.getElementById("mobileMenu");if(!e||!i)return;const c=()=>{i.classList.add("is-open"),e.setAttribute("aria-expanded","true"),document.body.style.overflow="hidden"},t=()=>{i.classList.remove("is-open"),e.setAttribute("aria-expanded","false"),document.body.style.overflow=""},a=()=>{i.classList.contains("is-open")?t():c()};e.addEventListener("click",s=>{s.stopPropagation(),a()}),i.addEventListener("click",s=>{s.target.tagName==="A"&&t()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&t()}),document.addEventListener("click",s=>{const l=s.target,o=i.contains(l),n=e.contains(l);i.classList.contains("is-open")&&!o&&!n&&t()}),matchMedia("(min-width: 1025px)").addEventListener("change",s=>{s.matches&&t()})}function _(){const e=document.createElement("section");e.className="container hero",e.id="about",e.innerHTML=`
+  `,e}function j(){const e=document.getElementById("burger"),i=document.getElementById("mobileMenu");if(!e||!i)return;const c=()=>{i.classList.add("is-open"),e.setAttribute("aria-expanded","true"),document.body.style.overflow="hidden"},t=()=>{i.classList.remove("is-open"),e.setAttribute("aria-expanded","false"),document.body.style.overflow=""},a=()=>{i.classList.contains("is-open")?t():c()};e.addEventListener("click",s=>{s.stopPropagation(),a()}),i.addEventListener("click",s=>{s.target.tagName==="A"&&t()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&t()}),document.addEventListener("click",s=>{const l=s.target,r=i.contains(l),o=e.contains(l);i.classList.contains("is-open")&&!r&&!o&&t()}),matchMedia("(min-width: 1025px)").addEventListener("change",s=>{s.matches&&t()})}function S(){const e=document.createElement("section");e.className="container hero",e.id="about",e.innerHTML=`
     <div class="hero-content">
       <h1>
         Hi, I'm<br/><span class="gradient-text typing"></span>
@@ -65,7 +65,7 @@
         <img src="images/Sohaib-suit.webp" alt="Sohaib Awwad" />
       </div>
     </div>
-  `;const i=e.querySelector(".typing");if(i){const c=["Sohaib Awwad","Floppy Man"];let t=0,a=0,s=!1;const l=()=>{const o=c[t],n=o.substring(0,a);i.textContent=n,!s&&a<o.length?(a++,setTimeout(l,120)):s&&a>0?(a--,setTimeout(l,80)):s?(s=!1,t=(t+1)%c.length,setTimeout(l,400)):(s=!0,setTimeout(l,1500))};l()}return e}function k(){const e=document.createElement("section");return e.className="container stack",e.innerHTML=`
+  `;const i=e.querySelector(".typing");if(i){const c=["Sohaib Awwad","Floppy Man"];let t=0,a=0,s=!1;const l=()=>{const r=c[t],o=r.substring(0,a);i.textContent=o,!s&&a<r.length?(a++,setTimeout(l,120)):s&&a>0?(a--,setTimeout(l,80)):s?(s=!1,t=(t+1)%c.length,setTimeout(l,400)):(s=!0,setTimeout(l,1500))};l()}return e}function M(){const e=document.createElement("section");return e.className="container stack",e.innerHTML=`
     <h2>Tech Stack</h2>
     <p>Technologies that keep my code flexible and my ideas flowing.</p>
 
@@ -108,7 +108,7 @@
         <img src="icons/canva.svg" alt="Canva" />
       </div>
     </div>
-  `,e}function w(){const e=document.createElement("section");return e.className="container services",e.id="services",e.setAttribute("aria-labelledby","services-title"),e.innerHTML=`
+  `,e}function T(){const e=document.createElement("section");return e.className="container services",e.id="services",e.setAttribute("aria-labelledby","services-title"),e.innerHTML=`
     <header class="services__header">
       <h2 id="services-title">Services</h2>
       <p class="services__subtitle">
@@ -156,7 +156,7 @@
         </ul>
       </li>
     </ul>
-  `,e}function y(){const e=document.createElement("section");return e.className="container soft-skills",e.id="skills",e.setAttribute("aria-labelledby","soft-skills-title"),e.innerHTML=`
+  `,e}function C(){const e=document.createElement("section");return e.className="container soft-skills",e.id="skills",e.setAttribute("aria-labelledby","soft-skills-title"),e.innerHTML=`
     <header class="soft-skills__header">
       <h2 id="soft-skills-title">Soft Skills</h2>
       <p class="soft-skills__subtitle">
@@ -225,7 +225,7 @@
         </p>
       </li>
     </ul>
-  `,e}function j(){const e=document.createElement("section");return e.className="container projects",e.id="projects",e.setAttribute("aria-labelledby","projects-title"),e.innerHTML=`
+  `,e}function E(){const e=document.createElement("section");return e.className="container projects",e.id="projects",e.setAttribute("aria-labelledby","projects-title"),e.innerHTML=`
     <div class="projects__header">
       <h2 id="projects-title">Projects</h2>
       <p>Flexible creations where design and code dance together.</p>
@@ -354,7 +354,77 @@
         </div>
       </li>
     </ul>
-  `,e}function S(){const e=document.createElement("footer");return e.className="footer",e.innerHTML=`
+  `,e}function I(){const e=document.createElement("section");return e.className="container contact",e.id="contact",e.setAttribute("aria-labelledby","contact-title"),e.innerHTML=`
+    <header class="contact__header">
+      <h2 id="contact-title">Contact</h2>
+      <p class="contact__subtitle">Let’s build something flexible and fun together.</p>
+    </header>
+
+    <div class="contact__grid">
+      <!-- Left: info -->
+      <div class="contact__info">
+        <ul class="contact__list">
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:sohaibawwad8@gmail.com">sohaibawwad8@gmail.com</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Amman, Jordan</span>
+          </li>
+          <li class="contact__social">
+            <a href="https://www.linkedin.com/in/sohaib-awwad-619788353/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/sohaib-awwad" aria-label="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/sohaib_a003?igsh=MTYyajczaXp2Y253YQ==" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+        </ul>
+
+        <p class="contact__note">
+          Prefer email? Feel free to reach out anytime.
+        </p>
+      </div>
+
+      <!-- Right: form -->
+      <form class="contact__form" id="contactForm" novalidate>
+        <!-- honeypot (anti-bot) -->
+        <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" />
+
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" minlength="3" maxlength="100" placeholder="Your Name" required />
+          <span class="error" data-for="name"></span>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" inputmode="email" minlength="5" maxlength="200" placeholder="your@email.com" required />
+          <span class="error" data-for="email"></span>
+        </div>
+
+        <div class="field">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" minlength="5" maxlength="100" placeholder="Project idea / Collaboration" required />
+          <span class="error" data-for="subject"></span>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" minlength="5" maxlength="500" placeholder="Tell me a bit about your project…" required></textarea>
+          <span class="error" data-for="message"></span>
+        </div>
+
+        <div class="actions">
+          <button class="btn-contact" type="submit">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+          <span class="form-result" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </div>
+  `,e}function A(){const e=document.getElementById("contactForm");if(!e)return;const i=e.querySelector(".form-result"),c=(a,s)=>{const l=e.querySelector(`.error[data-for="${a}"]`);l&&(l.textContent=s)},t=()=>e.querySelectorAll(".error").forEach(a=>a.textContent="");e.addEventListener("submit",a=>{if(a.preventDefault(),t(),i&&(i.textContent=""),e.querySelector(".hp-field").value.trim())return;const l=e.querySelector("#name").value.trim(),r=e.querySelector("#email").value.trim(),o=e.querySelector("#subject").value.trim(),p=e.querySelector("#message").value.trim();let d=!0;if(l||(c("name","Please enter your name."),d=!1),(!r||!/^\S+@\S+\.\S+$/.test(r))&&(c("email","Please enter a valid email."),d=!1),o||(c("subject","Please add a subject."),d=!1),(!p||p.length<10)&&(c("message","Message should be at least 10 characters."),d=!1),!d)return;const h="you@example.com",b=`From: ${l} <${r}>
+Subject: ${o}
+
+${p}`,v=`mailto:${encodeURIComponent(h)}?subject=${encodeURIComponent(o)}&body=${encodeURIComponent(b)}`;window.location.href=v,i&&(i.textContent="Opening your email app…",i.classList.add("ok")),e.reset()})}function F(){const e=document.createElement("footer");return e.className="footer",e.innerHTML=`
     <div class="container footer__top">
       <a class="brand" href="/" aria-label="Floppy Man home">
           <div class="footer__brand">
@@ -380,4 +450,4 @@
       Designed and Developed with flexibility and simplicity by 
       <span class="highlight">Floppy Man</span>.
     </p>
-  `,e}const d=document.querySelector("#navbar");d&&d.appendChild(u());const r=document.querySelector("#app");r&&(r.appendChild(_()),r.appendChild(k()),r.appendChild(w()),r.appendChild(y()),r.appendChild(j()));const p=document.querySelector("#footer");p&&p.appendChild(S());h();b();v();
+  `,e}const m=document.querySelector("#navbar");m&&m.appendChild(k());const n=document.querySelector("#app");n&&(n.appendChild(S()),n.appendChild(M()),n.appendChild(T()),n.appendChild(C()),n.appendChild(E()),n.appendChild(I()),A());const f=document.querySelector("#footer");f&&f.appendChild(F());y();w();j();
