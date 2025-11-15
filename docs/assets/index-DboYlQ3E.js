@@ -1,4 +1,4 @@
-(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))t(a);new MutationObserver(a=>{for(const s of a)if(s.type==="childList")for(const l of s.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&t(l)}).observe(document,{childList:!0,subtree:!0});function c(a){const s={};return a.integrity&&(s.integrity=a.integrity),a.referrerPolicy&&(s.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?s.credentials="include":a.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function t(a){if(a.ep)return;a.ep=!0;const s=c(a);fetch(a.href,s)}})();const g="theme",_=()=>matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";function h(e){document.documentElement.setAttribute("data-theme",e)}function w(){const e=localStorage.getItem(g)||_();h(e)}function y(){const e=Array.from(document.querySelectorAll(".theme-toggle"));if(!e.length)return;const i=()=>{const t=(document.documentElement.getAttribute("data-theme")||"light")==="dark";e.forEach(a=>{a.innerHTML=t?'<i class="fa-solid fa-sun" aria-hidden="true"></i>':'<i class="fa-solid fa-moon" aria-hidden="true"></i>'})};i();const c=()=>{const a=(document.documentElement.getAttribute("data-theme")||"light")==="dark"?"light":"dark";h(a),localStorage.setItem(g,a),i()};e.forEach(t=>t.addEventListener("click",c))}function k(){const e=document.createElement("nav");return e.className="navbar",e.innerHTML=`
+(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))t(a);new MutationObserver(a=>{for(const s of a)if(s.type==="childList")for(const l of s.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&t(l)}).observe(document,{childList:!0,subtree:!0});function c(a){const s={};return a.integrity&&(s.integrity=a.integrity),a.referrerPolicy&&(s.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?s.credentials="include":a.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function t(a){if(a.ep)return;a.ep=!0;const s=c(a);fetch(a.href,s)}})();const u="theme",_=()=>matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";function g(e){document.documentElement.setAttribute("data-theme",e)}function w(){const e=localStorage.getItem(u)||_();g(e)}function y(){const e=Array.from(document.querySelectorAll(".theme-toggle"));if(!e.length)return;const i=()=>{const t=(document.documentElement.getAttribute("data-theme")||"light")==="dark";e.forEach(a=>{a.innerHTML=t?'<i class="fa-solid fa-sun" aria-hidden="true"></i>':'<i class="fa-solid fa-moon" aria-hidden="true"></i>'})};i();const c=()=>{const a=(document.documentElement.getAttribute("data-theme")||"light")==="dark"?"light":"dark";g(a),localStorage.setItem(u,a),i()};e.forEach(t=>t.addEventListener("click",c))}function k(){const e=document.createElement("nav");return e.className="navbar",e.innerHTML=`
     <div class="container navbar__inner">
       <!-- Brand -->
       <a class="brand" href="/" aria-label="Floppy Man home">
@@ -37,7 +37,7 @@
       <a class="menu__link" href="#projects">Projects</a>
       <a class="btn-primary mobile-cta" href="#contact">Contact</a>
     </div>
-  `,e}function j(){const e=document.getElementById("burger"),i=document.getElementById("mobileMenu");if(!e||!i)return;const c=()=>{i.classList.add("is-open"),e.setAttribute("aria-expanded","true"),document.body.style.overflow="hidden"},t=()=>{i.classList.remove("is-open"),e.setAttribute("aria-expanded","false"),document.body.style.overflow=""},a=()=>{i.classList.contains("is-open")?t():c()};e.addEventListener("click",s=>{s.stopPropagation(),a()}),i.addEventListener("click",s=>{s.target.tagName==="A"&&t()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&t()}),document.addEventListener("click",s=>{const l=s.target,r=i.contains(l),o=e.contains(l);i.classList.contains("is-open")&&!r&&!o&&t()}),matchMedia("(min-width: 1025px)").addEventListener("change",s=>{s.matches&&t()})}function S(){const e=document.createElement("section");e.className="container hero",e.id="about",e.innerHTML=`
+  `,e}function j(){const e=document.getElementById("burger"),i=document.getElementById("mobileMenu");if(!e||!i)return;const c=()=>{i.classList.add("is-open"),e.setAttribute("aria-expanded","true"),document.body.style.overflow="hidden"},t=()=>{i.classList.remove("is-open"),e.setAttribute("aria-expanded","false"),document.body.style.overflow=""},a=()=>{i.classList.contains("is-open")?t():c()};e.addEventListener("click",s=>{s.stopPropagation(),a()}),i.addEventListener("click",s=>{s.target.tagName==="A"&&t()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&t()}),document.addEventListener("click",s=>{const l=s.target,o=i.contains(l),r=e.contains(l);i.classList.contains("is-open")&&!o&&!r&&t()}),matchMedia("(min-width: 1025px)").addEventListener("change",s=>{s.matches&&t()})}function S(){const e=document.createElement("section");e.className="container hero",e.innerHTML=`
     <div class="hero-content">
       <h1>
         Hi, I'm<br/><span class="gradient-text typing"></span>
@@ -65,7 +65,7 @@
         <img src="images/Sohaib-suit.webp" alt="Sohaib Awwad" />
       </div>
     </div>
-  `;const i=e.querySelector(".typing");if(i){const c=["Sohaib Awwad","Floppy Man"];let t=0,a=0,s=!1;const l=()=>{const r=c[t],o=r.substring(0,a);i.textContent=o,!s&&a<r.length?(a++,setTimeout(l,120)):s&&a>0?(a--,setTimeout(l,80)):s?(s=!1,t=(t+1)%c.length,setTimeout(l,400)):(s=!0,setTimeout(l,1500))};l()}return e}function M(){const e=document.createElement("section");return e.className="container stack",e.innerHTML=`
+  `;const i=e.querySelector(".typing");if(i){const c=["Sohaib Awwad","Floppy Man"];let t=0,a=0,s=!1;const l=()=>{const o=c[t],r=o.substring(0,a);i.textContent=r,!s&&a<o.length?(a++,setTimeout(l,120)):s&&a>0?(a--,setTimeout(l,80)):s?(s=!1,t=(t+1)%c.length,setTimeout(l,400)):(s=!0,setTimeout(l,1500))};l()}return e}function M(){const e=document.createElement("section");return e.className="container stack",e.innerHTML=`
     <h2>Tech Stack</h2>
     <p>Technologies that keep my code flexible and my ideas flowing.</p>
 
@@ -107,6 +107,60 @@
         <img src="icons/figma.svg" alt="Figma" />
         <img src="icons/canva.svg" alt="Canva" />
       </div>
+    </div>
+  `,e}function I(){const e=document.createElement("section");return e.className="container about",e.id="about",e.setAttribute("aria-labelledby","about-title"),e.innerHTML=`
+    <header class="about__header">
+      <h2 id="about-title">About</h2>
+      <p class="about__subtitle">
+        A quick snapshot of who I am and what <span class="highlight">Floppy Man</span> stands for.
+      </p>
+    </header>
+
+    <div class="about__panel">
+      <ul class="about__list">
+        <li class="about__item">
+          <div class="about__icon" aria-hidden="true">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="about__text">
+            <h3>Who I am</h3>
+            <p>
+              I’m <strong>Sohaib Awwad</strong>, a developer &amp; UI/UX designer who enjoys turning rough ideas
+              into clean, flexible web experiences.
+            </p>
+          </div>
+        </li>
+
+        <li class="about__item">
+          <div class="about__icon" aria-hidden="true">
+            <i class="fa-solid fa-copyright"></i>
+          </div>
+          <div class="about__text">
+            <h3>Floppy Man</h3>
+            <p>
+              <strong>Floppy Man</strong> is my personal brand – the name I use for work where design and code stay
+              light, flexible, and a bit playful.
+            </p>
+          </div>
+        </li>
+
+        <li class="about__item">
+          <div class="about__icon" aria-hidden="true">
+            <i class="fa-solid fa-arrows-up-down-left-right"></i>
+          </div>
+          <div class="about__text">
+            <h3>Best fit</h3>
+            <p>
+              I enjoy working across the full stack, crafting clean UI/UX flows, and building visual systems that make products feel consistent and expressive.
+            </p>
+            <div class="about__tags">
+              <span class="tag">Full Stack Dev</span>
+              <span class="tag">UI / UX</span>
+              <span class="tag">Brand & Visual Systems</span>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   `,e}function T(){const e=document.createElement("section");return e.className="container services",e.id="services",e.setAttribute("aria-labelledby","services-title"),e.innerHTML=`
     <header class="services__header">
@@ -225,7 +279,7 @@
         </p>
       </li>
     </ul>
-  `,e}function E(){const e=document.createElement("section");return e.className="container projects",e.id="projects",e.setAttribute("aria-labelledby","projects-title"),e.innerHTML=`
+  `,e}function A(){const e=document.createElement("section");return e.className="container projects",e.id="projects",e.setAttribute("aria-labelledby","projects-title"),e.innerHTML=`
     <div class="projects__header">
       <h2 id="projects-title">Projects</h2>
       <p>Flexible creations where design and code dance together.</p>
@@ -354,7 +408,7 @@
         </div>
       </li>
     </ul>
-  `,e}function I(){const e=document.createElement("section");return e.className="container contact",e.id="contact",e.setAttribute("aria-labelledby","contact-title"),e.innerHTML=`
+  `,e}function E(){const e=document.createElement("section");return e.className="container contact",e.id="contact",e.setAttribute("aria-labelledby","contact-title"),e.innerHTML=`
     <header class="contact__header">
       <h2 id="contact-title">Contact</h2>
       <p class="contact__subtitle">Let’s build something flexible and fun together.</p>
@@ -421,10 +475,10 @@
         </div>
       </form>
     </div>
-  `,e}function A(){const e=document.getElementById("contactForm");if(!e)return;const i=e.querySelector(".form-result"),c=(a,s)=>{const l=e.querySelector(`.error[data-for="${a}"]`);l&&(l.textContent=s)},t=()=>e.querySelectorAll(".error").forEach(a=>a.textContent="");e.addEventListener("submit",a=>{if(a.preventDefault(),t(),i&&(i.textContent=""),e.querySelector(".hp-field").value.trim())return;const l=e.querySelector("#name").value.trim(),r=e.querySelector("#email").value.trim(),o=e.querySelector("#subject").value.trim(),p=e.querySelector("#message").value.trim();let d=!0;if(l||(c("name","Please enter your name."),d=!1),(!r||!/^\S+@\S+\.\S+$/.test(r))&&(c("email","Please enter a valid email."),d=!1),o||(c("subject","Please add a subject."),d=!1),(!p||p.length<10)&&(c("message","Message should be at least 10 characters."),d=!1),!d)return;const u="sohaibawwad8@gmail.com",b=`From: ${l} <${r}>
-Subject: ${o}
+  `,e}function F(){const e=document.getElementById("contactForm");if(!e)return;const i=e.querySelector(".form-result"),c=(a,s)=>{const l=e.querySelector(`.error[data-for="${a}"]`);l&&(l.textContent=s)},t=()=>e.querySelectorAll(".error").forEach(a=>a.textContent="");e.addEventListener("submit",a=>{if(a.preventDefault(),t(),i&&(i.textContent=""),e.querySelector(".hp-field").value.trim())return;const l=e.querySelector("#name").value.trim(),o=e.querySelector("#email").value.trim(),r=e.querySelector("#subject").value.trim(),p=e.querySelector("#message").value.trim();let d=!0;if(l||(c("name","Please enter your name."),d=!1),(!o||!/^\S+@\S+\.\S+$/.test(o))&&(c("email","Please enter a valid email."),d=!1),r||(c("subject","Please add a subject."),d=!1),(!p||p.length<10)&&(c("message","Message should be at least 10 characters."),d=!1),!d)return;const h="sohaibawwad8@gmail.com",b=`From: ${l} <${o}>
+Subject: ${r}
 
-${p}`,v=`mailto:${encodeURIComponent(u)}?subject=${encodeURIComponent(o)}&body=${encodeURIComponent(b)}`;window.location.href=v,i&&(i.textContent="Opening your email app…",i.classList.add("ok")),e.reset()})}function F(){const e=document.createElement("footer");return e.className="footer",e.innerHTML=`
+${p}`,v=`mailto:${encodeURIComponent(h)}?subject=${encodeURIComponent(r)}&body=${encodeURIComponent(b)}`;window.location.href=v,i&&(i.textContent="Opening your email app…",i.classList.add("ok")),e.reset()})}function x(){const e=document.createElement("footer");return e.className="footer",e.innerHTML=`
     <div class="container footer__top">
       <a class="brand" href="/" aria-label="Floppy Man home">
           <div class="footer__brand">
@@ -450,4 +504,4 @@ ${p}`,v=`mailto:${encodeURIComponent(u)}?subject=${encodeURIComponent(o)}&body=$
       Designed and Developed with flexibility and simplicity by 
       <span class="highlight">Floppy Man</span>.
     </p>
-  `,e}const m=document.querySelector("#navbar");m&&m.appendChild(k());const n=document.querySelector("#app");n&&(n.appendChild(S()),n.appendChild(M()),n.appendChild(T()),n.appendChild(C()),n.appendChild(E()),n.appendChild(I()),A());const f=document.querySelector("#footer");f&&f.appendChild(F());w();y();j();
+  `,e}const m=document.querySelector("#navbar");m&&m.appendChild(k());const n=document.querySelector("#app");n&&(n.appendChild(S()),n.appendChild(M()),n.appendChild(I()),n.appendChild(T()),n.appendChild(C()),n.appendChild(A()),n.appendChild(E()),F());const f=document.querySelector("#footer");f&&f.appendChild(x());w();y();j();

@@ -2,7 +2,6 @@
 export function createHero(): HTMLElement {
   const el = document.createElement("section");
   el.className = "container hero";
-  el.id = "about";
   el.innerHTML = `
     <div class="hero-content">
       <h1>

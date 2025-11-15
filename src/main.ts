@@ -8,11 +8,13 @@ import "./styles/softskills.css";
 import "./styles/projects.css";
 import "./styles/contact.css";
 import "./styles/footer.css";
+import "./styles/about.css";
 
 import { initTheme, bindThemeToggles } from "./utils/theme";
 import { createNavbar, initNavbarMenu } from "./components/navbar";
 import { createHero } from "./components/hero";
 import { createStack } from "./components/techstack";
+import { createAboutSection } from "./components/about";
 import { createServicesSection } from "./components/services";
 import { createSoftSkillsSection } from "./components/softskills";
 import { createProjectsSection } from "./components/projects";
@@ -28,6 +30,7 @@ const app = document.querySelector<HTMLElement>("#app");
 if (app) {
   app.appendChild(createHero());
   app.appendChild(createStack());
+  app.appendChild(createAboutSection());
   app.appendChild(createServicesSection());
   app.appendChild(createSoftSkillsSection());
   app.appendChild(createProjectsSection());
