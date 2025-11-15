@@ -6,7 +6,9 @@ export function createSoftSkillsSection(): HTMLElement {
   el.setAttribute("aria-labelledby", "soft-skills-title");
 
   el.innerHTML = `
-    <header class="soft-skills__header">
+    <header class="soft-skills__header"
+      data-aos="fade-up"
+      data-aos-duration="700">
       <h2 id="soft-skills-title">Soft Skills</h2>
       <p class="soft-skills__subtitle">
         Human skills that keep my code collaborative, clear, and calm.
@@ -14,7 +16,10 @@ export function createSoftSkillsSection(): HTMLElement {
     </header>
 
     <ul class="soft-skills__grid">
-      <li class="soft-skill-card">
+      <li class="soft-skill-card"
+        data-aos="fade-up"
+        data-aos-duration="650"
+        data-aos-delay="0">
         <div class="soft-skill-card__icon" aria-hidden="true">
           <i class="fa-solid fa-comments"></i>
         </div>
@@ -24,7 +29,10 @@ export function createSoftSkillsSection(): HTMLElement {
         </p>
       </li>
 
-      <li class="soft-skill-card">
+      <li class="soft-skill-card"
+        data-aos="fade-up"
+        data-aos-duration="650"
+        data-aos-delay="80">
         <div class="soft-skill-card__icon" aria-hidden="true">
           <i class="fa-solid fa-puzzle-piece"></i>
         </div>
@@ -34,7 +42,10 @@ export function createSoftSkillsSection(): HTMLElement {
         </p>
       </li>
 
-      <li class="soft-skill-card">
+      <li class="soft-skill-card"
+        data-aos="fade-up"
+        data-aos-duration="650"
+        data-aos-delay="160">
         <div class="soft-skill-card__icon" aria-hidden="true">
           <i class="fa-solid fa-people-group"></i>
         </div>
@@ -44,7 +55,10 @@ export function createSoftSkillsSection(): HTMLElement {
         </p>
       </li>
 
-      <li class="soft-skill-card">
+      <li class="soft-skill-card"
+        data-aos="fade-up"
+        data-aos-duration="650"
+        data-aos-delay="240">
         <div class="soft-skill-card__icon" aria-hidden="true">
           <i class="fa-solid fa-shuffle"></i>
         </div>
@@ -54,7 +68,10 @@ export function createSoftSkillsSection(): HTMLElement {
         </p>
       </li>
 
-      <li class="soft-skill-card">
+      <li class="soft-skill-card"
+        data-aos="fade-up"
+        data-aos-duration="650"
+        data-aos-delay="320">
         <div class="soft-skill-card__icon" aria-hidden="true">
           <i class="fa-solid fa-clock"></i>
         </div>
@@ -64,7 +81,10 @@ export function createSoftSkillsSection(): HTMLElement {
         </p>
       </li>
 
-      <li class="soft-skill-card">
+      <li class="soft-skill-card"
+        data-aos="fade-up"
+        data-aos-duration="650"
+        data-aos-delay="400">
         <div class="soft-skill-card__icon" aria-hidden="true">
           <i class="fa-solid fa-eye"></i>
         </div>

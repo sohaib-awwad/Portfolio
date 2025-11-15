@@ -3,8 +3,20 @@ export function createStack(): HTMLElement {
   const el = document.createElement("section");
   el.className = "container stack";
   el.innerHTML = `
-    <h2>Tech Stack</h2>
-    <p>Technologies that keep my code flexible and my ideas flowing.</p>
+    <h2
+      data-aos="fade-up"
+      data-aos-duration="600"
+    >
+      Tech Stack
+    </h2>
+
+    <p
+      data-aos="fade-up"
+      data-aos-delay="120"
+      data-aos-duration="600"
+    >
+      Technologies that keep my code flexible and my ideas flowing.
+    </p>
 
     <div class="scroller">
       <div class="scroller__track">

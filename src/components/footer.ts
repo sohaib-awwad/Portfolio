@@ -4,7 +4,7 @@ export function createFooter(): HTMLElement {
   el.className = "footer";
   el.innerHTML = `
     <div class="container footer__top">
-      <a class="brand" href="/" aria-label="Floppy Man home">
+      <a class="brand" href="https://sohaib-awwad.github.io/Portfolio/" aria-label="Floppy Man home">
           <div class="footer__brand">
             <img src="icons/Floppy Man.svg" alt="Floppy Man logo" class="footer__logo" />
             <span class="footer__name">Floppy Man</span>

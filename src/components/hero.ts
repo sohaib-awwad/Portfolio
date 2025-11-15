@@ -4,21 +4,21 @@ export function createHero(): HTMLElement {
   el.className = "container hero";
   el.innerHTML = `
     <div class="hero-content">
-      <h1>
-        Hi, I'm<br/><span class="gradient-text typing"></span>
+      <h1 data-aos="fade-up" data-aos-duration="800">
+        Hi, I'm<br/><span data-aos="fade-up" data-aos-delay="150" data-aos-duration="800" class="gradient-text typing"></span>
       </h1>
-      <p>
+      <p data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
         A flexible developer turning ideas into dynamic, Floppy experiences.
       </p>
 
-      <div class="hero-buttons">
+      <div class="hero-buttons" data-aos="fade-up" data-aos-delay="450">
         <a href="#contact" class="btn primary">Let's Work!</a>
         <a href="data/cv.pdf" download="Sohaib_Awwad_CV.pdf" target="_blank" class="btn secondary">
           <i class="fa-solid fa-download"></i> Download my CV
         </a>
       </div>
 
-      <div class="social-icons">
+      <div class="social-icons" data-aos="zoom-in" data-aos-delay="600">
         <a href="https://www.linkedin.com/in/sohaib-awwad-619788353/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         <a href="https://github.com/sohaib-awwad" aria-label="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
         <a href="https://www.instagram.com/sohaib_a003?igsh=MTYyajczaXp2Y253YQ==" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -26,7 +26,7 @@ export function createHero(): HTMLElement {
     </div>
 
     <div class="hero-right">
-      <div class="avatar">
+      <div class="avatar" data-aos="fade-left" data-aos-duration="1000">
         <img src="images/Sohaib-suit.webp" alt="Sohaib Awwad" />
       </div>
     </div>

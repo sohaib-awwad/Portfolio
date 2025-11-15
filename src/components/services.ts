@@ -6,7 +6,9 @@ export function createServicesSection(): HTMLElement {
   el.setAttribute("aria-labelledby", "services-title");
 
   el.innerHTML = `
-    <header class="services__header">
+    <header class="services__header"
+      data-aos="fade-up"
+      data-aos-duration="700">
       <h2 id="services-title">Services</h2>
       <p class="services__subtitle">
         Flexible Services that blend design and development.
@@ -15,7 +17,10 @@ export function createServicesSection(): HTMLElement {
 
     <ul class="services__flex">
       <!-- Card 1 -->
-      <li class="service-card">
+      <li class="service-card"
+        data-aos="fade-right"
+        data-aos-duration="700"
+        data-aos-delay="100">
         <div class="service-card__icon" aria-hidden="true">
           <i class="fa-solid fa-code"></i>
         </div>
@@ -35,7 +40,10 @@ export function createServicesSection(): HTMLElement {
       </li>
 
       <!-- Card 2 -->
-      <li class="service-card">
+      <li class="service-card"
+        data-aos="fade-left"
+        data-aos-duration="700"
+        data-aos-delay="200">
         <div class="service-card__icon" aria-hidden="true">
           <i class="fa-solid fa-palette"></i>
         </div>

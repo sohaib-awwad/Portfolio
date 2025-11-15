@@ -41,12 +41,12 @@
   padding: 18px 20px;
   text-align: center;
   border: 1px solid var(--surface);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 .soft-skill-card:hover {
   border: 1px solid rgba(245, 118, 39, 0.45);
-  transform: translateY(-3px);
+  transform: translateY(-3px) !important;
   box-shadow: var(--shadow-m);
 }
 
@@ -62,7 +62,7 @@
   border-radius: 12px;
   font-size: 20px;
   margin-bottom: 12px;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease !important;
 }
 
 .soft-skill-card:hover .soft-skill-card__icon {

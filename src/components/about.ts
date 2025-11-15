@@ -6,7 +6,9 @@ export function createAboutSection(): HTMLElement {
   el.setAttribute("aria-labelledby", "about-title");
 
   el.innerHTML = `
-    <header class="about__header">
+    <header class="about__header"
+      data-aos="fade-up"
+      data-aos-duration="700">
       <h2 id="about-title">About</h2>
       <p class="about__subtitle">
         A quick snapshot of who I am and what <span class="highlight">Floppy Man</span> stands for.
@@ -15,7 +17,10 @@ export function createAboutSection(): HTMLElement {
 
     <div class="about__panel">
       <ul class="about__list">
-        <li class="about__item">
+        <li class="about__item"
+          data-aos="fade-up"
+          data-aos-duration="700"
+          data-aos-delay="0">
           <div class="about__icon" aria-hidden="true">
             <i class="fa-solid fa-user"></i>
           </div>
@@ -28,7 +33,10 @@ export function createAboutSection(): HTMLElement {
           </div>
         </li>
 
-        <li class="about__item">
+        <li class="about__item"
+          data-aos="fade-up"
+          data-aos-duration="700"
+          data-aos-delay="120">
           <div class="about__icon" aria-hidden="true">
             <i class="fa-solid fa-copyright"></i>
           </div>
@@ -41,7 +49,10 @@ export function createAboutSection(): HTMLElement {
           </div>
         </li>
 
-        <li class="about__item">
+        <li class="about__item"
+          data-aos="fade-up"
+          data-aos-duration="700"
+          data-aos-delay="240">
           <div class="about__icon" aria-hidden="true">
             <i class="fa-solid fa-arrows-up-down-left-right"></i>
           </div>

@@ -1,4 +1,3 @@
-// src/components/contact.ts
 export function createContactSection(): HTMLElement {
   const el = document.createElement("section");
   el.className = "container contact";
@@ -6,14 +5,19 @@ export function createContactSection(): HTMLElement {
   el.setAttribute("aria-labelledby", "contact-title");
 
   el.innerHTML = `
-    <header class="contact__header">
+    <header class="contact__header"
+      data-aos="fade-up"
+      data-aos-duration="700">
       <h2 id="contact-title">Contact</h2>
       <p class="contact__subtitle">Let’s build something flexible and fun together.</p>
     </header>
 
     <div class="contact__grid">
       <!-- Left: info -->
-      <div class="contact__info">
+      <div class="contact__info"
+        data-aos="fade-right"
+        data-aos-duration="700"
+        data-aos-delay="100">
         <ul class="contact__list">
           <li>
             <i class="fa-solid fa-envelope"></i>
@@ -24,9 +28,15 @@ export function createContactSection(): HTMLElement {
             <span>Amman, Jordan</span>
           </li>
           <li class="contact__social">
-            <a href="https://www.linkedin.com/in/sohaib-awwad-619788353/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://github.com/sohaib-awwad" aria-label="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.instagram.com/sohaib_a003?igsh=MTYyajczaXp2Y253YQ==" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/sohaib-awwad-619788353/"
+               target="_blank"
+               aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/sohaib-awwad"
+               aria-label="GitHub"
+               target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/sohaib_a003?igsh=MTYyajczaXp2Y253YQ=="
+               target="_blank"
+               aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           </li>
         </ul>
 
@@ -36,31 +46,40 @@ export function createContactSection(): HTMLElement {
       </div>
 
       <!-- Right: form -->
-      <form class="contact__form" id="contactForm" novalidate>
+      <form class="contact__form"
+        id="contactForm"
+        novalidate
+        data-aos="fade-left"
+        data-aos-duration="700"
+        data-aos-delay="200">
         <!-- honeypot (anti-bot) -->
         <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" />
 
         <div class="field">
           <label for="name">Your name</label>
-          <input id="name" name="name" type="text" minlength="3" maxlength="100" placeholder="Your Name" required />
+          <input id="name" name="name" type="text" minlength="3" maxlength="100"
+                 placeholder="Your Name" required />
           <span class="error" data-for="name"></span>
         </div>
 
         <div class="field">
           <label for="email">Email</label>
-          <input id="email" name="email" type="email" inputmode="email" minlength="5" maxlength="200" placeholder="your@email.com" required />
+          <input id="email" name="email" type="email" inputmode="email"
+                 minlength="5" maxlength="200" placeholder="your@email.com" required />
           <span class="error" data-for="email"></span>
         </div>
 
         <div class="field">
           <label for="subject">Subject</label>
-          <input id="subject" name="subject" type="text" minlength="5" maxlength="100" placeholder="Project idea / Collaboration" required />
+          <input id="subject" name="subject" type="text" minlength="5" maxlength="100"
+                 placeholder="Project idea / Collaboration" required />
           <span class="error" data-for="subject"></span>
         </div>
 
         <div class="field">
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" minlength="5" maxlength="500" placeholder="Tell me a bit about your project…" required></textarea>
+          <textarea id="message" name="message" rows="5" minlength="5" maxlength="500"
+                    placeholder="Tell me a bit about your project…" required></textarea>
           <span class="error" data-for="message"></span>
         </div>
 
