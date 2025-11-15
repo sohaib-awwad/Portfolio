@@ -47,7 +47,7 @@
       </p>
 
       <div class="hero-buttons">
-        <a href="#" class="btn primary">Let's Work!</a>
+        <a href="#contact" class="btn primary">Let's Work!</a>
         <a href="data/cv.pdf" download="Sohaib_Awwad_CV.pdf" target="_blank" class="btn secondary">
           <i class="fa-solid fa-download"></i> Download my CV
         </a>
