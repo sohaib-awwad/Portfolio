@@ -3,7 +3,7 @@ export function createAboutSection(): HTMLElement {
   const el = document.createElement("section");
   el.className = "container about";
   el.id = "about";
-  el.setAttribute("aria-labelledby", "about-title");//test
+  el.setAttribute("aria-labelledby", "about-title");
   el.innerHTML = `
     <header class="about__header"
       data-aos="fade-up"
