@@ -13,7 +13,7 @@ export function createHero(): HTMLElement {
 
       <div class="hero-buttons" data-aos="fade-up" data-aos-delay="450">
         <a href="#contact" class="btn primary">Let's Work!</a>
-        <a href="data/cv.pdf" download="Sohaib_Awwad_CV.pdf" target="_blank" class="btn secondary">
+        <a href="data/Sohaib_Awwad_Designer_Developer.pdf" download="Sohaib_Awwad_Designer_Developer.pdf" target="_blank" class="btn secondary">
           <i class="fa-solid fa-download"></i> Download my CV
         </a>
       </div>
