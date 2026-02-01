@@ -525,6 +525,7 @@
           </p>
           <div class="project-card__links">
             <a href="https://sohaib-awwad.github.io/Library-Management-System/"
+               target="_blank"
                class="project-link"
                aria-label="Live Preview">
               <i class="fa-solid fa-link"></i> Live
