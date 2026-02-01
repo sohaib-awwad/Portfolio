@@ -21,12 +21,15 @@ export function createStack(): HTMLElement {
     <div class="scroller">
       <div class="scroller__track">
         <!-- Group A -->
+        <i class="notion fa-brands fa-notion" aria-label="Notion"></i>
         <img src="icons/html.svg" alt="HTML" />
         <img src="icons/css.svg" alt="CSS" />
         <img src="icons/javascript.svg" alt="JavaScript" />
         <img src="icons/typescript.svg" alt="TypeScript" />
+        <img src="icons/sass_icon.svg" alt="Sass" />
         <img src="icons/tailwind.svg" alt="Tailwind" />
         <img src="icons/bootstrap.svg" alt="Bootstrap" />
+        <img src="icons/vite_logo.svg" alt="Vite" />
         <img src="icons/git.svg" alt="Git" />
         <i class="github fa-brands fa-github" aria-label="GitHub"></i>
         <img src="icons/angular.svg" alt="Angular" />
@@ -39,12 +42,15 @@ export function createStack(): HTMLElement {
         <img src="icons/canva.svg" alt="Canva" />
 
         <!-- Group B (loop duplicate) -->
+        <i class="notion fa-brands fa-notion" aria-label="Notion"></i>
         <img src="icons/html.svg" alt="HTML" />
         <img src="icons/css.svg" alt="CSS" />
         <img src="icons/javascript.svg" alt="JavaScript" />
         <img src="icons/typescript.svg" alt="TypeScript" />
+        <img src="icons/sass_icon.svg" alt="Sass" />
         <img src="icons/tailwind.svg" alt="Tailwind" />
         <img src="icons/bootstrap.svg" alt="Bootstrap" />
+        <img src="icons/vite_logo.svg" alt="Vite" />
         <img src="icons/git.svg" alt="Git" />
         <i class="github fa-brands fa-github" aria-label="GitHub"></i>
         <img src="icons/angular.svg" alt="Angular" />

@@ -171,6 +171,38 @@ export function createProjectsSection(): HTMLElement {
           </div>
         </div>
       </li>
+
+      <!-- Card 6 -->
+      <li class="project-card"
+        data-aos="fade-up"
+        data-aos-duration="700"
+        data-aos-delay="500">
+        <div class="project-card__image">
+          <img src="images/LMS-Website.webp" alt="Vanora Mobile App preview" />
+        </div>
+        <div class="project-card__body">
+          <div class="chips">
+            <span class="chip-web-project">Front-End</span>
+          </div>
+          <h3 class="project-card__title">LMS Admin Dashboard</h3>
+          <p class="project-card__desc">
+            Admin dashboard for managing books, users, and borrowing reservations with real-time status tracking. built with Vite, TypeScript, and Tailwind CSS.
+          </p>
+          <div class="project-card__links">
+            <a href="https://sohaib-awwad.github.io/Library-Management-System/"
+               class="project-link"
+               aria-label="Live Preview">
+              <i class="fa-solid fa-link"></i> Live
+            </a>
+            <a href="https://github.com/sohaib-awwad/Library-Management-System"
+               target="_blank"
+               class="project-link"
+               aria-label="View GitHub Code">
+              <i class="fa-brands fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+      </li>
     </ul>
   `;
 
