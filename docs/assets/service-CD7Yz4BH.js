@@ -1,4 +1,4 @@
-import{h as c,p,a as u,b as h,s as d,m as f,g as m}from"./projects-D0m4Kw3Y.js";import{s as n}from"./services-1D_pSi24.js";const o=a=>a.replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;"),g=a=>a.split(/\n\s*\n/).map(e=>`<p>${e.trim()}</p>`).join("");function r(a,e,s={}){const{aos:t="fade-up",id:i}=s;return`
+import{h as c,p,a as u,b as h,s as d,m as f,g as m}from"./projects-D0m4Kw3Y.js";import{s as n}from"./services-BBKFA7Xi.js";const o=a=>a.replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;"),g=a=>a.split(/\n\s*\n/).map(e=>`<p>${e.trim()}</p>`).join("");function r(a,e,s={}){const{aos:t="fade-up",id:i}=s;return`
     <section class="sd-section container"${i?` id="${i}"`:""}
       data-aos="${t}" data-aos-duration="700">
       <h2 class="sd-section__title">${a}</h2>

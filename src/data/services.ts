@@ -20,7 +20,7 @@ export const services: Service[] = [
     icon: "fa-solid fa-code",
     tagline:
       "I build complete web apps from front to back — fast, secure, and scalable.",
-    cardChips: ["Angular/.Net", "Git/Github", "SSMS"],
+    cardChips: ["Angular / React", ".Net / C#", "SSMS"],
     intro: `From data model to the pixel on the screen, I build complete web applications that real people can use day-to-day. The combinations vary — Angular with .NET and SQL Server is my go-to — but the principle is the same: a clear architecture, a clean front-end, and code that the next developer can read without a phone call.`,
     whatYouGet: [
       "A working web application — front-end, back-end, and database",

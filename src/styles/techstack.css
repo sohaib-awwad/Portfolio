@@ -1,7 +1,7 @@
 /* === Tech Stack section === */
 .stack {
   text-align: center;
-  margin-top: 58px;
+  margin-top: var(--section-spacing);
 }
 
 .stack h2 {

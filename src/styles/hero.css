@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 104px;
+  margin-top: var(--section-spacing);
 }
 
 .hero-content {

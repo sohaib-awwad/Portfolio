@@ -14,7 +14,7 @@
   justify-content: space-between;
   gap: var(--space-7);
   flex-wrap: wrap;
-  margin-top: 120px;
+  margin-top: var(--section-spacing);
   margin-bottom: 64px;
 }
 
@@ -50,6 +50,14 @@
   flex-wrap: wrap;
 }
 
+a.btn {
+  transition: color 0.3s ease;
+}
+
+a.btn:hover {
+  color: var(--primary);
+}
+
 .pd-hero__image {
   flex: 1 1 380px;
   display: flex;
@@ -78,7 +86,8 @@
 
 /* ---------- Generic section ---------- */
 .pd-section {
-  margin: 64px auto;
+  margin-inline: auto;
+  margin-top: var(--section-spacing);
 }
 
 .pd-section__title {
@@ -473,8 +482,10 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-m);
   color: var(--text);
-  transition: transform var(--dur-2) var(--ease),
-    box-shadow var(--dur-2) var(--ease), border-color var(--dur-2) var(--ease);
+  transition:
+    transform var(--dur-2) var(--ease),
+    box-shadow var(--dur-2) var(--ease),
+    border-color var(--dur-2) var(--ease);
 }
 
 .pd-nav__link:hover {
