@@ -1,4 +1,40 @@
-// src/components/services.ts
+import { services, type Service } from "../data/services";
+import { serviceUrl } from "../utils/slug";
+
+const renderServiceCard = (s: Service, index: number): string => {
+  const isLeft = index % 2 === 0;
+  const aosDir = isLeft ? "fade-right" : "fade-left";
+  const delay = 100 + index * 80;
+  const detail = serviceUrl(s.slug);
+
+  const chips = (s.cardChips ?? [])
+    .map((c) => `<li class="chip">${c}</li>`)
+    .join("");
+
+  return `
+    <li class="service-card"
+        data-aos="${aosDir}"
+        data-aos-duration="700"
+        data-aos-delay="${delay}">
+      <a class="service-card__icon" aria-hidden="true" href="${detail}" tabindex="-1">
+        <i class="${s.icon}"></i>
+      </a>
+
+      <div class="service-card__body">
+        <h3 class="service-card__title">
+          <a href="${detail}">${s.title}</a>
+        </h3>
+        <p class="service-card__desc">${s.tagline}</p>
+      </div>
+
+      ${chips ? `<ul class="chip-list" aria-label="Tools">${chips}</ul>` : ""}
+
+      <a class="service-card__cta" href="${detail}" aria-label="Learn more about ${s.title}">
+        Learn more <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </li>`;
+};
+
 export function createServicesSection(): HTMLElement {
   const el = document.createElement("section");
   el.className = "container services";
@@ -15,51 +51,8 @@ export function createServicesSection(): HTMLElement {
       </p>
     </header>
 
-    <ul class="services__flex">
-      <!-- Card 1 -->
-      <li class="service-card"
-        data-aos="fade-right"
-        data-aos-duration="700"
-        data-aos-delay="100">
-        <div class="service-card__icon" aria-hidden="true">
-          <i class="fa-solid fa-code"></i>
-        </div>
-
-        <div class="service-card__body">
-          <h3 class="service-card__title">Full-Stack Web Development</h3>
-          <p class="service-card__desc">
-            I build complete web apps from front to back — fast, secure, and scalable.
-          </p>
-        </div>
-
-        <ul class="chip-list" aria-label="Tech stack">
-          <li class="chip">Angular/.Net</li>
-          <li class="chip">Git/Github</li>
-          <li class="chip">SSMS</li>
-        </ul>
-      </li>
-
-      <!-- Card 2 -->
-      <li class="service-card"
-        data-aos="fade-left"
-        data-aos-duration="700"
-        data-aos-delay="200">
-        <div class="service-card__icon" aria-hidden="true">
-          <i class="fa-solid fa-palette"></i>
-        </div>
-
-        <div class="service-card__body">
-          <h3 class="service-card__title">UI / UX Design</h3>
-          <p class="service-card__desc">
-            I design interfaces that look perfect, feel right, and flow naturally from wireframe to final UI.
-          </p>
-        </div>
-
-        <ul class="chip-list" aria-label="Tools">
-          <li class="chip">Figma</li>
-          <li class="chip">Canva</li>
-        </ul>
-      </li>
+    <ul class="services__grid">
+      ${services.map(renderServiceCard).join("")}
     </ul>
   `;
 

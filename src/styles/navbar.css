@@ -45,10 +45,41 @@
   text-decoration: none;
   text-align: center;
   opacity: 0.85;
-  transition: opacity var(--dur-1, 150ms) var(--ease, ease);
+  position: relative;
+  padding-block: 4px;
+  transition: opacity var(--dur-1, 150ms) var(--ease, ease),
+    color var(--dur-1, 150ms) var(--ease, ease);
 }
 .menu__link:hover {
   opacity: 1;
+}
+
+/* Active state — section currently in view (home) or current sub-page parent */
+.menu__link.is-active {
+  opacity: 1;
+  color: var(--primary);
+}
+
+.menu--inline .menu__link.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 999px;
+}
+
+.btn-primary.is-active {
+  background-color: color-mix(in oklab, var(--primary) 88%, #000 12%);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 30%, transparent);
+}
+
+.mobile-menu .menu__link.is-active {
+  background: color-mix(in oklab, var(--primary) 14%, transparent);
+  border-radius: var(--radius-s);
+  padding-inline: 12px;
 }
 .btn-primary {
   display: inline-flex;

@@ -34,6 +34,9 @@
   --space-7: 32px;
   --space-8: 40px;
 
+  /* Cinematic section spacing — gap between major home sections */
+  --section-spacing: clamp(96px, 16vh, 200px);
+
   /* Typography */
   --ff: "Quicksand", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   --fs-300: 14px;
@@ -74,7 +77,6 @@
   --muted-text: #b2b2b2;
   --border: #2a2b2f;
 
-  /* ظلال أغمق وأنعم */
   --shadow-s: inset 0 1px 2px #00000040, 0 1px 2px #00000060,
     0 2px 4px #00000050;
   --shadow-m: inset 0 1px 2px #00000050, 0 2px 4px #00000070,
@@ -99,6 +101,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* When jumping to a section via hash, offset for the fixed navbar
+   so the section heading isn't hidden under the bar. */
+#about,
+#services,
+#skills,
+#projects,
+#contact {
+  scroll-margin-top: 80px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -109,7 +121,22 @@ body {
   line-height: var(--lh-normal);
   display: grid;
   grid-template-rows: auto 1fr auto;
+  /* CRITICAL for responsiveness: without this, the implicit grid column
+     uses min-width: auto and expands to fit the widest descendant's
+     min-content (e.g. a nowrap tab, a long unbroken word). That makes
+     every section inherit an oversized width via width: 100%, and the
+     hero / tech stack get pushed off-screen on narrow viewports.
+     minmax(0, 1fr) lets the column shrink to fit the viewport. */
+  grid-template-columns: minmax(0, 1fr);
   min-height: 100dvh;
+}
+
+/* Belt-and-suspenders: clip any descendant that overflows the main column,
+   so a single misbehaving element can't force the layout wider than
+   viewport. */
+main#app {
+  min-width: 0;
+  overflow-x: clip;
 }
 
 img {
@@ -121,14 +148,12 @@ a {
   color: inherit;
 }
 
-/* تركيز واضح للوصولية */
 :where(a, button, [role="button"], input, textarea, select):focus-visible {
   outline: 2px solid color-mix(in oklab, var(--secondary) 70%, transparent);
   outline-offset: 2px;
   border-radius: var(--radius-s);
 }
 
-/* حاوية عامة */
 .container {
   width: 100%;
   max-width: var(--container);
@@ -136,7 +161,6 @@ a {
   padding-inline: var(--space-4);
 }
 
-/* Utilities بسيطة مفيدة */
 .hidden {
   display: none !important;
 }
@@ -152,7 +176,6 @@ a {
   border: 0;
 }
 
-/* تقليل الحركة لو النظام مفعّل */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
@@ -168,4 +191,78 @@ a {
 }
 #themeToggle i:hover {
   transform: rotate(20deg);
+}
+
+/* =========================
+   UNIFIED SECTION TITLE STYLE
+   Centered text + gradient underline bar — applied to every
+   section heading on the home page and the detail pages.
+   ========================= */
+
+.stack > h2,
+.about__header > h2,
+.services__header > h2,
+.resume__header > h2,
+.projects__header > h2,
+.contact__header > h2,
+.pd-section__title,
+.sd-section__title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+}
+
+.stack > h2::after,
+.about__header > h2::after,
+.services__header > h2::after,
+.resume__header > h2::after,
+.projects__header > h2::after,
+.contact__header > h2::after,
+.pd-section__title::after,
+.sd-section__title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 999px;
+}
+
+/* Section header wrappers that contain the h2 should center the inline-block */
+.stack,
+.about__header,
+.services__header,
+.resume__header,
+.projects__header,
+.contact__header {
+  text-align: center;
+}
+
+/* Detail page sections (project-detail, service-detail) wrap content with
+   left-aligned body but want centered title block */
+.pd-section,
+.sd-section {
+  text-align: center;
+}
+.pd-section > *:not(.pd-section__title),
+.sd-section > *:not(.sd-section__title) {
+  text-align: left;
+}
+
+/* =========================
+   CINEMATIC SECTION SPACING
+   Big air between home page sections — but NOT inside the
+   combined hero+stack block, which behaves as one unit.
+   ========================= */
+
+.about,
+.services,
+#skills.resume,
+.projects,
+.contact {
+  margin-top: var(--section-spacing);
 }

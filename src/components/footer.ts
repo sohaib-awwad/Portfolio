@@ -1,18 +1,18 @@
-// src/components/footer.ts
 export function createFooter(): HTMLElement {
+  const year = new Date().getFullYear();
   const el = document.createElement("footer");
   el.className = "footer";
   el.innerHTML = `
     <div class="container footer__top">
       <a class="brand" href="https://sohaib-awwad.github.io/Portfolio/" aria-label="Floppy Man home">
           <div class="footer__brand">
-            <img src="icons/Floppy Man.svg" alt="Floppy Man logo" class="footer__logo" />
+            <img src="${import.meta.env.BASE_URL}icons/Floppy Man.svg" alt="Floppy Man logo" class="footer__logo" />
             <span class="footer__name">Floppy Man</span>
           </div>
       </a>
 
       <p class="footer__copy">
-        © 2025 Floppy Man. All Rights Reserved.
+        © ${year} Floppy Man. All Rights Reserved.
       </p>
 
       <div class="footer__social">

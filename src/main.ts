@@ -1,39 +1,24 @@
-// AOS Animation Linbrary
-import AOS from "aos";
-import "aos/dist/aos.css";
-AOS.init({
-  once: true,
-  duration: 700,
-  easing: "ease-out-cubic",
-});
-
-// src/main.ts
 import "./style.css";
 import "./styles/navbar.css";
 import "./styles/hero.css";
 import "./styles/techstack.css";
 import "./styles/services.css";
-import "./styles/softskills.css";
+import "./styles/resume.css";
 import "./styles/projects.css";
 import "./styles/contact.css";
 import "./styles/footer.css";
 import "./styles/about.css";
 
-import { initTheme, bindThemeToggles } from "./utils/theme";
-import { createNavbar, initNavbarMenu } from "./components/navbar";
+import { mountPageShell } from "./utils/page-shell";
 import { createHero } from "./components/hero";
 import { createStack } from "./components/techstack";
 import { createAboutSection } from "./components/about";
 import { createServicesSection } from "./components/services";
-import { createSoftSkillsSection } from "./components/softskills";
+import { createResumeSection } from "./components/resume";
 import { createProjectsSection } from "./components/projects";
 import { createContactSection, initContactForm } from "./components/contact";
-import { createFooter } from "./components/footer";
 
-const navbarMount = document.querySelector<HTMLElement>("#navbar");
-if (navbarMount) {
-  navbarMount.appendChild(createNavbar());
-}
+mountPageShell();
 
 const app = document.querySelector<HTMLElement>("#app");
 if (app) {
@@ -41,17 +26,18 @@ if (app) {
   app.appendChild(createStack());
   app.appendChild(createAboutSection());
   app.appendChild(createServicesSection());
-  app.appendChild(createSoftSkillsSection());
+  app.appendChild(createResumeSection());
   app.appendChild(createProjectsSection());
   app.appendChild(createContactSection());
   initContactForm();
-}
 
-const footerMount = document.querySelector<HTMLElement>("#footer");
-if (footerMount) {
-  footerMount.appendChild(createFooter());
+  // Sections are created by JS, so the browser's initial hash-scroll
+  // ran before #about / #skills / etc. existed. Re-scroll once the
+  // DOM has settled so deep-links like /Portfolio/#skills land correctly.
+  if (location.hash) {
+    requestAnimationFrame(() => {
+      const target = document.querySelector(location.hash);
+      if (target) target.scrollIntoView({ behavior: "auto", block: "start" });
+    });
+  }
 }
-
-initTheme(); // set initial theme
-bindThemeToggles(); // bind all .theme-toggle buttons
-initNavbarMenu(); // mobile menu behavior

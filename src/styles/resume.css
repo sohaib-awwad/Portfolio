@@ -1,0 +1,403 @@
+/* ============================================================
+   RESUME SECTION (replaces Soft Skills)
+   ============================================================ */
+
+.resume__header {
+  margin-bottom: clamp(24px, 3vw, 36px);
+}
+
+.resume__header h2 {
+  margin: 0 0 6px;
+  font-size: 1.8rem;
+  color: var(--text);
+}
+
+.resume__subtitle {
+  margin: 8px 0 0;
+  color: var(--muted-text);
+  font-size: 1rem;
+}
+
+/* ---------- Tab list ---------- */
+.resume__tablist-wrap {
+  position: relative;
+  margin: 0 auto var(--space-6);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.resume__tablist {
+  /* min-width: 0 is critical — without it, this flex container's implicit
+     min-width: auto would expand to fit all 7 nowrap tabs (~800px) and force
+     the whole page wider than the viewport, breaking responsiveness. */
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: var(--shadow-s);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.resume__tablist::-webkit-scrollbar {
+  display: none;
+}
+
+/* Right-edge fade hint on overflow */
+.resume__tablist-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 32px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--bg));
+  border-radius: 0 999px 999px 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.resume__tablist-wrap.has-overflow::after {
+  opacity: 1;
+}
+
+.resume-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  scroll-snap-align: center;
+  transition: background var(--dur-2) var(--ease), color var(--dur-2) var(--ease),
+    box-shadow var(--dur-2) var(--ease);
+}
+
+.resume-tab i {
+  font-size: 0.9em;
+  color: var(--muted-text);
+  transition: color var(--dur-2) var(--ease);
+}
+
+.resume-tab:hover {
+  background: color-mix(in oklab, var(--primary) 12%, transparent);
+}
+
+.resume-tab:hover i {
+  color: var(--primary);
+}
+
+.resume-tab.is-active {
+  background: linear-gradient(135deg, var(--primary), color-mix(in oklab, var(--primary) 70%, var(--secondary)));
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(245, 118, 39, 0.35);
+}
+
+.resume-tab.is-active i {
+  color: #fff;
+}
+
+/* ---------- Panels ---------- */
+.resume__panels {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-l);
+  padding: clamp(20px, 3vw, 32px);
+  box-shadow: var(--shadow-s);
+  min-height: 240px;
+}
+
+.resume-panel {
+  animation: resume-fade 0.28s var(--ease);
+}
+
+@keyframes resume-fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.resume-empty {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: var(--space-7) var(--space-4);
+  color: var(--muted-text);
+  gap: var(--space-3);
+}
+
+.resume-empty i {
+  font-size: 1.75rem;
+  color: var(--muted-text);
+  opacity: 0.6;
+}
+
+.resume-empty p {
+  margin: 0;
+  font-size: 0.95rem;
+  max-width: 40ch;
+  line-height: 1.5;
+}
+
+/* ---------- Generic cards (Education, Experience, Certifications, Awards) ---------- */
+.resume-cards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.resume-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  transition: transform var(--dur-2) var(--ease),
+    border-color var(--dur-2) var(--ease);
+}
+
+.resume-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--primary) 35%, var(--border));
+}
+
+.resume-card__logo {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-s);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+}
+
+.resume-card__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.resume-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.resume-card__title {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.resume-card__meta {
+  margin: 0 0 var(--space-2);
+  color: var(--muted-text);
+  font-size: 0.9rem;
+}
+
+.resume-card__desc {
+  margin: 0;
+  color: var(--muted-text);
+  line-height: 1.6;
+}
+
+.resume-card__bullets {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-2) 0 0;
+  display: grid;
+  gap: 6px;
+}
+
+.resume-card__bullets li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--muted-text);
+  line-height: 1.5;
+}
+
+.resume-card__bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.resume-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--space-2);
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.resume-card__link:hover {
+  color: var(--secondary);
+}
+
+/* ---------- Professional Skills ---------- */
+.resume-skills {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.resume-skills__group-title {
+  margin: 0 0 var(--space-3);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--muted-text);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.resume-skills__chips {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.resume-skills__chips .chip {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: border-color var(--dur-2) var(--ease),
+    color var(--dur-2) var(--ease);
+}
+
+.resume-skills__chips .chip:hover {
+  color: var(--primary);
+  border-color: color-mix(in oklab, var(--primary) 50%, var(--border));
+}
+
+/* ---------- Soft Skills (moved into Resume tab) ---------- */
+.resume-soft-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  /* min(220px, 100%) so very narrow viewports collapse cleanly to one column
+     instead of forcing 220px and overflowing the parent. */
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: var(--space-4);
+}
+
+.resume-soft-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  padding: var(--space-5);
+  display: grid;
+  gap: var(--space-2);
+  text-align: left;
+  transition: transform var(--dur-2) var(--ease),
+    border-color var(--dur-2) var(--ease);
+}
+
+.resume-soft-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in oklab, var(--primary) 35%, var(--border));
+}
+
+.resume-soft-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-s);
+  display: grid;
+  place-items: center;
+  background: rgba(245, 118, 39, 0.15);
+  border: 1px solid rgba(245, 118, 39, 0.4);
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-2);
+}
+
+.resume-soft-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.resume-soft-card p {
+  margin: 0;
+  color: var(--muted-text);
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+/* ---------- Languages ---------- */
+.resume-languages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.resume-language {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  padding: var(--space-3) var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resume-language__name {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.resume-language__level {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  color: var(--secondary);
+}
+
+.resume-language__level--native {
+  background: rgba(245, 118, 39, 0.15);
+  border-color: rgba(245, 118, 39, 0.4);
+  color: var(--primary);
+}
