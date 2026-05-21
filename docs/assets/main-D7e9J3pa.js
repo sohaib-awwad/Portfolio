@@ -328,7 +328,6 @@ import{s as x,p as T,a as L,b as F,A as U,m as P}from"./projects-Dli9hbPg.js";im
           <a class="project-card__cta" href="${t}" aria-label="Read full case study: ${e.title}">
             <i class="fa-solid fa-book-open" aria-hidden="true"></i>
             <span>Case study</span>
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
           </a>
           <div class="project-card__icons">${s.join("")}</div>
         </div>
