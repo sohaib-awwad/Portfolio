@@ -24,7 +24,7 @@
 .projects__grid {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: clamp(20px, 2.5vw, 32px);
   padding: 0;
   margin: 0;
@@ -284,7 +284,7 @@
 }
 .filter-chip--all.is-active {
   background: linear-gradient(90deg, var(--primary), var(--secondary));
-  border-color: transparent;
+  border: none;
   color: #fff;
 }
 
@@ -395,6 +395,6 @@
 
 .pagination-page.is-active {
   background: linear-gradient(90deg, var(--primary), var(--secondary));
-  border-color: transparent;
+  border: none;
   color: #fff;
 }
