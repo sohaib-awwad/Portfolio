@@ -86,8 +86,16 @@ function renderOverview(p: Project): string {
 
 function renderMyRole(p: Project): string {
   if (!p.myRole?.length) return "";
-  const items = p.myRole.map((b) => `<li>${b}</li>`).join("");
-  return section("My Role", `<ul class="pd-bullets">${items}</ul>`);
+  const items = p.myRole
+    .map(
+      (b, i) => `
+      <li class="pd-role">
+        <span class="pd-role__num">${String(i + 1).padStart(2, "0")}</span>
+        <p class="pd-role__text">${b}</p>
+      </li>`
+    )
+    .join("");
+  return section("My Role", `<ul class="pd-roles">${items}</ul>`);
 }
 
 function renderTechStack(p: Project): string {
@@ -260,7 +268,7 @@ function renderOutcomes(p: Project): string {
   if (!p.outcomes) return "";
   return section(
     "Outcomes & Lessons Learned",
-    `<div class="pd-prose">${paragraphs(p.outcomes)}</div>`
+    `<div class="pd-outcomes-card">${paragraphs(p.outcomes)}</div>`
   );
 }
 

@@ -1,4 +1,4 @@
-import{h as u,b as o,p as l,a as p,m as h,g as m}from"./projects-Dli9hbPg.js";/* empty css                 */const g=e=>e==="Notion"?"chip-notion":["Full-Stack","Front-End","Back-End"].includes(e)?"chip-web-project":"chip-design-project",r=e=>e.replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;"),c=e=>e.split(/\n\s*\n/).map(s=>`<p>${s.trim()}</p>`).join("");function f(e){const s=e.chips.map(n=>`<span class="${g(n)}">${n}</span>`).join(""),a=[];return e.links.live&&a.push(`<a class="btn primary" href="${e.links.live}" target="_blank" rel="noopener">
+import{h as u,b as i,p as l,a as p,m as h,g as m}from"./projects-C2N8efJD.js";/* empty css                 */const g=e=>e==="Notion"?"chip-notion":["Full-Stack","Front-End","Back-End"].includes(e)?"chip-web-project":"chip-design-project",r=e=>e.replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;"),c=e=>e.split(/\n\s*\n/).map(s=>`<p>${s.trim()}</p>`).join("");function f(e){const s=e.chips.map(n=>`<span class="${g(n)}">${n}</span>`).join(""),a=[];return e.links.live&&a.push(`<a class="btn primary" href="${e.links.live}" target="_blank" rel="noopener">
          <i class="fa-solid fa-link"></i> Live
        </a>`),e.links.code&&a.push(`<a class="btn secondary" href="${e.links.code}" target="_blank" rel="noopener">
          <i class="fa-brands fa-github"></i> Code
@@ -15,18 +15,22 @@ import{h as u,b as o,p as l,a as p,m as h,g as m}from"./projects-Dli9hbPg.js";/*
         ${a.length?`<div class="pd-hero__ctas">${a.join("")}</div>`:""}
       </div>
       <div class="pd-hero__image">
-        <img src="${o(e.heroImage)}" alt="${r(e.heroAlt)}" loading="eager" />
+        <img src="${i(e.heroImage)}" alt="${r(e.heroAlt)}" loading="eager" />
       </div>
-    </header>`}function t(e,s,a={}){const{aos:n="fade-up",id:i}=a;return`
-    <section class="pd-section container"${i?` id="${i}"`:""}
+    </header>`}function t(e,s,a={}){const{aos:n="fade-up",id:o}=a;return`
+    <section class="pd-section container"${o?` id="${o}"`:""}
       data-aos="${n}" data-aos-duration="700">
       <h2 class="pd-section__title">${e}</h2>
       ${s}
-    </section>`}function $(e){return e.overview?t("Overview",`<div class="pd-prose">${c(e.overview)}</div>`):""}function v(e){if(!e.myRole?.length)return"";const s=e.myRole.map(a=>`<li>${a}</li>`).join("");return t("My Role",`<ul class="pd-bullets">${s}</ul>`)}function y(e){if(!e.techStack?.length)return"";const s=e.techStack.map(a=>`
+    </section>`}function $(e){return e.overview?t("Overview",`<div class="pd-prose">${c(e.overview)}</div>`):""}function _(e){if(!e.myRole?.length)return"";const s=e.myRole.map((a,n)=>`
+      <li class="pd-role">
+        <span class="pd-role__num">${String(n+1).padStart(2,"0")}</span>
+        <p class="pd-role__text">${a}</p>
+      </li>`).join("");return t("My Role",`<ul class="pd-roles">${s}</ul>`)}function v(e){if(!e.techStack?.length)return"";const s=e.techStack.map(a=>`
       <li class="pd-tech-item">
         <span class="pd-tech-name">${a.name}</span>
         <span class="pd-tech-why">${a.why}</span>
-      </li>`).join("");return t("Tech Stack",`<ul class="pd-tech-list">${s}</ul>`)}function _(e){if(!e.designProcess)return"";const s=e.designProcess.figmaEmbed?`<div class="pd-figma-embed">
+      </li>`).join("");return t("Tech Stack",`<ul class="pd-tech-list">${s}</ul>`)}function y(e){if(!e.designProcess)return"";const s=e.designProcess.figmaEmbed?`<div class="pd-figma-embed">
          <iframe src="https://www.figma.com/embed?embed_host=floppyman&url=${encodeURIComponent(e.designProcess.figmaEmbed)}"
            allowfullscreen loading="lazy" title="Figma design preview"></iframe>
        </div>`:"";return t("Design Process",`<div class="pd-prose">${c(e.designProcess.text)}</div>${s}`)}function b(e){if(!e.brandSystem)return"";const s=[];if(e.brandSystem.palette?.length){const a=e.brandSystem.palette.map(n=>`
@@ -44,7 +48,7 @@ import{h as u,b as o,p as l,a as p,m as h,g as m}from"./projects-Dli9hbPg.js";/*
           </span>
         </li>`).join("");s.push(`
       <h3 class="pd-subhead">Typography</h3>
-      <ul class="pd-types">${a}</ul>`)}if(e.brandSystem.logoVariants?.length){const a=e.brandSystem.logoVariants.map(n=>`<li><img src="${o(n.src)}" alt="${r(n.alt)}" loading="lazy" /></li>`).join("");s.push(`
+      <ul class="pd-types">${a}</ul>`)}if(e.brandSystem.logoVariants?.length){const a=e.brandSystem.logoVariants.map(n=>`<li><img src="${i(n.src)}" alt="${r(n.alt)}" loading="lazy" /></li>`).join("");s.push(`
       <h3 class="pd-subhead">Logo Variants</h3>
       <ul class="pd-logos">${a}</ul>`)}return t("Brand System",s.join(""))}function k(e){if(!e.notionWorkspace)return"";const s=e.notionWorkspace.databases?.length?`<ul class="pd-chip-list">${e.notionWorkspace.databases.map(n=>`<li class="chip">${n}</li>`).join("")}</ul>`:"",a=e.notionWorkspace.relations?`<p class="pd-relations"><strong>How they connect:</strong> ${e.notionWorkspace.relations}</p>`:"";return t("Workspace Structure",`<div class="pd-prose">${c(e.notionWorkspace.description)}</div>
      ${s?`<h3 class="pd-subhead">Databases</h3>${s}`:""}
@@ -54,14 +58,14 @@ import{h as u,b as o,p as l,a as p,m as h,g as m}from"./projects-Dli9hbPg.js";/*
         <p>${a.desc}</p>
       </li>`).join("");return t("Automations & Templates",`<ul class="pd-automations">${s}</ul>`)}function w(e){if(!e.features?.length)return"";const s=e.features.map(a=>`
       <li class="pd-feature">
-        ${a.image?`<div class="pd-feature__img"><img src="${o(a.image)}" alt="" loading="lazy" /></div>`:""}
+        ${a.image?`<div class="pd-feature__img"><img src="${i(a.image)}" alt="" loading="lazy" /></div>`:""}
         <div class="pd-feature__text">
           <h3>${a.title}</h3>
           <p>${a.desc}</p>
         </div>
       </li>`).join("");return t("Key Features",`<ul class="pd-features">${s}</ul>`)}function S(e){if(!e.gallery?.length)return"";const s=e.gallery.map(a=>`<li class="pd-gallery__item">
-           <img src="${o(a.src)}" alt="${r(a.alt)}" loading="lazy" />
-         </li>`).join("");return t("Screenshots",`<ul class="pd-gallery">${s}</ul>`)}function P(e){if(!e.challenges?.length)return"";const s=e.challenges.map(a=>`
+           <img src="${i(a.src)}" alt="${r(a.alt)}" loading="lazy" />
+         </li>`).join("");return t("Screenshots",`<ul class="pd-gallery">${s}</ul>`)}function x(e){if(!e.challenges?.length)return"";const s=e.challenges.map(a=>`
       <li class="pd-challenge">
         <div class="pd-challenge__problem">
           <h3><i class="fa-solid fa-triangle-exclamation"></i> Challenge</h3>
@@ -71,7 +75,7 @@ import{h as u,b as o,p as l,a as p,m as h,g as m}from"./projects-Dli9hbPg.js";/*
           <h3><i class="fa-solid fa-lightbulb"></i> Solution</h3>
           <p>${a.solution}</p>
         </div>
-      </li>`).join("");return t("Challenges & Solutions",`<ul class="pd-challenges">${s}</ul>`)}function x(e){return e.outcomes?t("Outcomes & Lessons Learned",`<div class="pd-prose">${c(e.outcomes)}</div>`):""}function N(e){const s=l.findIndex(i=>i.slug===e.slug);if(s===-1)return"";const a=l[(s-1+l.length)%l.length],n=l[(s+1)%l.length];return`
+      </li>`).join("");return t("Challenges & Solutions",`<ul class="pd-challenges">${s}</ul>`)}function P(e){return e.outcomes?t("Outcomes & Lessons Learned",`<div class="pd-outcomes-card">${c(e.outcomes)}</div>`):""}function N(e){const s=l.findIndex(o=>o.slug===e.slug);if(s===-1)return"";const a=l[(s-1+l.length)%l.length],n=l[(s+1)%l.length];return`
     <nav class="pd-nav container" data-aos="fade-up" data-aos-duration="500">
       <a class="pd-nav__link pd-nav__link--prev" href="${p(a.slug)}">
         <i class="fa-solid fa-arrow-left"></i>
@@ -91,7 +95,7 @@ import{h as u,b as o,p as l,a as p,m as h,g as m}from"./projects-Dli9hbPg.js";/*
         </span>
         <i class="fa-solid fa-arrow-right"></i>
       </a>
-    </nav>`}function F(e){const s=document.createElement("article");return s.className="pd-article",s.innerHTML=[f(e),$(e),v(e),y(e),_(e),b(e),k(e),j(e),w(e),S(e),P(e),x(e),N(e)].join(""),s}function A(e){const s=document.createElement("section");return s.className="container pd-notfound",s.innerHTML=`
+    </nav>`}function F(e){const s=document.createElement("article");return s.className="pd-article",s.innerHTML=[f(e),$(e),_(e),v(e),y(e),b(e),k(e),j(e),w(e),S(e),x(e),P(e),N(e)].join(""),s}function A(e){const s=document.createElement("section");return s.className="container pd-notfound",s.innerHTML=`
     <h1>Project not found</h1>
     <p>No project matches the slug <code>${r(e)}</code>.</p>
     <p><a class="btn primary" href="${u("#projects")}">Back to all projects</a></p>

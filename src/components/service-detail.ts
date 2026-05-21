@@ -26,6 +26,15 @@ function section(
 }
 
 function renderHero(s: Service): string {
+  const tools = s.techAndTools?.length
+    ? `
+      <div class="sd-hero__tools" aria-label="Tools and technologies">
+        <span class="sd-hero__tools-label">Built with</span>
+        <ul class="sd-hero__tools-list">
+          ${s.techAndTools.map((t) => `<li class="chip">${t}</li>`).join("")}
+        </ul>
+      </div>`
+    : "";
   return `
     <header class="sd-hero container" data-aos="fade-up" data-aos-duration="700">
       <div class="sd-hero__icon" aria-hidden="true">
@@ -34,6 +43,7 @@ function renderHero(s: Service): string {
       <h1 class="sd-hero__title">${s.title}</h1>
       <p class="sd-hero__tagline">${s.tagline}</p>
       ${s.intro ? `<div class="sd-hero__intro">${paragraphs(s.intro)}</div>` : ""}
+      ${tools}
     </header>`;
 }
 
@@ -66,17 +76,6 @@ function renderProcess(s: Service): string {
     )
     .join("");
   return section("My process", `<ol class="sd-steps">${items}</ol>`);
-}
-
-function renderTechAndTools(s: Service): string {
-  if (!s.techAndTools?.length) return "";
-  const chips = s.techAndTools
-    .map((t) => `<li class="chip">${t}</li>`)
-    .join("");
-  return section(
-    "Tech & tools",
-    `<ul class="sd-chip-list" aria-label="Tools and technologies">${chips}</ul>`
-  );
 }
 
 function renderFeaturedProjects(s: Service): string {
@@ -176,7 +175,6 @@ export function renderServiceDetail(s: Service): HTMLElement {
     renderHero(s),
     renderWhatYouGet(s),
     renderProcess(s),
-    renderTechAndTools(s),
     renderFeaturedProjects(s),
     renderFaq(s),
     renderCta(s),

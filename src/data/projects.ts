@@ -112,6 +112,29 @@ I wanted a portfolio that reflected the Floppy Man brand: flexible, playful, and
     outcomes: `Choosing vanilla over a framework meant every piece had to be built deliberately — which kept the bundle small and the code easy to read. The architecture has since evolved into a component-based, data-driven setup that scales to project and service detail pages.`,
   },
   {
+    slug: "cor-coffee-house",
+    title: "Cor Coffee House",
+    tagline:
+      "Brand identity and full website design for a specialty coffee house in Madinat Al-Sharq — bilingual, dark/light mode, and built for real operations.",
+    chips: ["UI / UX"],
+    heroImage: "images/Cor_Coffee_House_Hero-Image.webp",
+    heroAlt: "Cor Coffee House Website preview",
+    links: {
+      design:
+        "https://www.figma.com/design/mmkKFZF7gUrEmBJ0GXq66P/Cor-Coffee-House-Website-V1?node-id=302-3070&t=m6oceQtNgtIf6lXW-1",
+    },
+    overview: `Cor is a specialty coffee house in Madinat Al-Sharq with 10k+ Instagram followers and no digital home. The project covers the full design system and website — from token architecture to production-ready components — across six pages with bilingual English/Arabic support and dark/light mode.
+
+The design work spans a complete Figma variable system (Brand, Alias, and Mapped collections), a component library built to production spec, and copy written in both languages. The site is designed to turn existing social followers into regulars.`,
+    myRole: [
+      "Defined the full design system — token architecture, variable collections, typography, color, and elevation",
+      "Built production-ready components in Figma using a Mapped variable system and two-layer 3D technique",
+      "Wrote all website copy in English and Arabic across six pages",
+      "Structured the information architecture: sitemap, page hierarchy, section flow, and SEO strategy",
+    ],
+    outcomes: `This project sharpened how I think about design systems as infrastructure rather than documentation. Building tokens first — and wiring every component to them — meant design decisions compounded cleanly instead of drifting. The bilingual constraint also forced copy and layout to be genuinely flexible, not just mirrored.`,
+  },
+  {
     slug: "web-design-template",
     title: "Web Design Template",
     tagline:
@@ -156,16 +179,28 @@ Instead of a generic e-commerce template, the app feels closer to a brand storyt
     outcomes: `Designing for a single product instead of a catalog changed everything about pacing. The lesson translated: tightening scope makes a design more confident, not less interesting.`,
   },
   {
-    slug: "personal-os",
-    title: "Personal Operating System",
+    slug: "floppy-gym-tracker",
+    title: "Floppy GYM Tracker",
     tagline:
-      "A Notion workspace that ties together notes, projects, and weekly review. Published as a public template.",
+      "A mobile-first weight training system built entirely in Notion — with relational databases, auto-calculated 1RM, PR detection, and progressive overload suggestions.",
     chips: ["Notion"],
-    heroImage: "",
-    heroAlt: "Personal Operating System Notion workspace preview",
+    heroImage: "images/floppy-gym-tracker.webp",
+    heroAlt: "Floppy GYM Tracker Notion workspace preview",
     links: {
-      notion: "https://www.notion.so/",
+      notion: "",
     },
+    overview: `A full-featured gym tracking system designed and built inside Notion — no gym app, no code, just relational data and formulas doing heavy lifting.
+
+The system spans 6 linked databases: Programs, Workout Templates, Exercises, Sessions, Sets, and Body Metrics. It auto-calculates estimated 1RM via the Epley formula, detects PRs, suggests progressive overload based on last set RPE, and tracks weekly body composition trends.
+
+Designed for 95% mobile use — every interaction is optimized for the gym floor. Starting a workout is one tap. Logging a set is under 10 seconds. The complexity lives entirely in the background.`,
+    myRole: [
+      "Architected the full 6-database relational schema from scratch",
+      "Built all Notion formula logic: Est. 1RM, Is PR, Volume, Overload Suggestion, Duration display",
+      "Designed the mobile-first UI — session templates, dashboard layout, exercise deep-dives",
+      "Authored MCP-assisted automation workflows for session start/finish and weekly check-ins",
+    ],
+    outcomes: `Building a complex system inside a tool not designed for it forces you to think differently. Every formula is a constraint puzzle, every relation is an architecture decision. This project sharpened my thinking around data modeling, progressive UI complexity, and designing for speed — lessons that translate directly into product and frontend work.`,
   },
   {
     slug: "lms-dashboard",

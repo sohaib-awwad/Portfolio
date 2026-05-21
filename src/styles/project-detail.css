@@ -102,6 +102,34 @@ a.btn:hover {
   color: var(--text);
 }
 
+.pd-prose {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-l);
+  padding: clamp(var(--space-5), 3vw, var(--space-7));
+  padding-left: clamp(var(--space-6), 3.5vw, var(--space-8));
+  box-shadow: var(--shadow-s);
+  position: relative;
+  overflow: hidden;
+  transition:
+    box-shadow var(--dur-2) var(--ease),
+    border-color var(--dur-2) var(--ease);
+}
+
+.pd-prose::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--primary), var(--secondary));
+}
+
+.pd-prose:hover {
+  box-shadow: var(--shadow-m);
+}
+
 .pd-prose p {
   color: var(--muted-text);
   font-size: var(--fs-400);
@@ -109,35 +137,123 @@ a.btn:hover {
   margin: 0 0 var(--space-4);
 }
 
+.pd-prose p:first-child {
+  font-size: var(--fs-500);
+  color: var(--text);
+  font-weight: 500;
+}
+
 .pd-prose p:last-child {
   margin-bottom: 0;
 }
 
-/* ---------- My Role bullets ---------- */
-.pd-bullets {
+/* ---------- Outcomes — highlight card ---------- */
+.pd-outcomes-card {
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--primary) 14%, var(--surface)),
+    color-mix(in oklab, var(--secondary) 14%, var(--surface))
+  );
+  border: 1px solid var(--border);
+  border-radius: var(--radius-l);
+  padding: clamp(var(--space-6), 3.5vw, var(--space-8));
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-s);
+}
+
+.pd-outcomes-card::before {
+  content: "\201D";
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-5);
+  font-size: 9rem;
+  color: var(--primary);
+  opacity: 0.18;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.pd-outcomes-card p {
+  position: relative;
+  z-index: 1;
+  color: var(--text);
+  font-size: var(--fs-500);
+  line-height: 1.7;
+  margin: 0 0 var(--space-4);
+}
+
+.pd-outcomes-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- My Role — numbered cards ---------- */
+.pd-roles {
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
-  gap: var(--space-3);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
 }
 
-.pd-bullets li {
+.pd-role {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: var(--shadow-s);
   position: relative;
-  padding-left: 28px;
+  overflow: hidden;
+  transition:
+    transform var(--dur-2) var(--ease),
+    box-shadow var(--dur-2) var(--ease),
+    border-color var(--dur-2) var(--ease);
+}
+
+.pd-role::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  opacity: 0;
+  transition: opacity var(--dur-2) var(--ease);
+}
+
+.pd-role:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-m);
+  border-color: transparent;
+}
+
+.pd-role:hover::before {
+  opacity: 1;
+}
+
+.pd-role__num {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.pd-role__text {
+  margin: 0;
   color: var(--text);
   line-height: 1.6;
-}
-
-.pd-bullets li::before {
-  content: "\f00c";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  position: absolute;
-  left: 0;
-  top: 2px;
-  color: var(--primary);
-  font-size: 0.9em;
 }
 
 /* ---------- Tech stack ---------- */
@@ -159,6 +275,16 @@ a.btn:hover {
   flex-direction: column;
   gap: 6px;
   box-shadow: var(--shadow-s);
+  transition:
+    transform var(--dur-2) var(--ease),
+    box-shadow var(--dur-2) var(--ease),
+    border-color var(--dur-2) var(--ease);
+}
+
+.pd-tech-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-m);
+  border-color: var(--primary);
 }
 
 .pd-tech-name {
@@ -205,6 +331,14 @@ a.btn:hover {
   padding: var(--space-3);
   display: grid;
   gap: 4px;
+  transition:
+    transform var(--dur-2) var(--ease),
+    box-shadow var(--dur-2) var(--ease);
+}
+
+.pd-swatch:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-m);
 }
 
 .pd-swatch__color {
@@ -242,6 +376,16 @@ a.btn:hover {
   padding: var(--space-4);
   display: grid;
   gap: 4px;
+  transition:
+    transform var(--dur-2) var(--ease),
+    box-shadow var(--dur-2) var(--ease),
+    border-color var(--dur-2) var(--ease);
+}
+
+.pd-type:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-m);
+  border-color: var(--secondary);
 }
 
 .pd-type__name {
@@ -313,6 +457,17 @@ a.btn:hover {
   border-left: 4px solid var(--secondary);
   border-radius: var(--radius-m);
   padding: var(--space-4) var(--space-5);
+  box-shadow: var(--shadow-s);
+  transition:
+    transform var(--dur-2) var(--ease),
+    box-shadow var(--dur-2) var(--ease),
+    border-left-width var(--dur-2) var(--ease);
+}
+
+.pd-automation:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-m);
+  border-left-width: 6px;
 }
 
 .pd-automation h3 {
@@ -346,6 +501,16 @@ a.btn:hover {
   gap: var(--space-4);
   align-items: center;
   box-shadow: var(--shadow-s);
+  transition:
+    transform var(--dur-2) var(--ease),
+    box-shadow var(--dur-2) var(--ease),
+    border-color var(--dur-2) var(--ease);
+}
+
+.pd-feature:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-m);
+  border-color: var(--primary);
 }
 
 .pd-feature__img img {
@@ -391,6 +556,14 @@ a.btn:hover {
   overflow: hidden;
   box-shadow: var(--shadow-s);
   background: var(--surface);
+  transition:
+    transform var(--dur-2) var(--ease),
+    box-shadow var(--dur-2) var(--ease);
+}
+
+.pd-gallery__item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-l);
 }
 
 .pd-gallery__item img {
@@ -425,6 +598,17 @@ a.btn:hover {
   border: 1px solid var(--border);
   border-radius: var(--radius-m);
   padding: var(--space-4);
+  box-shadow: var(--shadow-s);
+  transition:
+    transform var(--dur-2) var(--ease),
+    box-shadow var(--dur-2) var(--ease),
+    border-left-width var(--dur-2) var(--ease);
+}
+
+.pd-challenge > div:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-m);
+  border-left-width: 6px;
 }
 
 .pd-challenge__problem {
@@ -528,14 +712,8 @@ a.btn:hover {
 
 .pd-nav__link--back {
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #fff;
-  border: 0;
-}
-
-.pd-nav__link--back:hover {
-  color: #fff;
-  filter: brightness(1.05);
+  background: var(--surface);
+  border-color: var(--border);
 }
 
 @media (max-width: 720px) {

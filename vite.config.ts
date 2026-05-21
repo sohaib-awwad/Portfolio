@@ -22,6 +22,8 @@ export default defineConfig({
         project("floppy-portfolio"),
         project("web-design-template"),
         project("vanora"),
+        project("cor-coffee-house"),
+        project("floppy-gym-tracker"),
         project("lms-dashboard"),
         service("full-stack"),
         service("ui-ux"),
