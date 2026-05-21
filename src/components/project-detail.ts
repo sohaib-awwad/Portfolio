@@ -2,7 +2,8 @@ import { projects, type Project } from "../data/projects";
 import { projectUrl, homeUrl, asset } from "../utils/slug";
 
 const chipClass = (chip: string): string => {
-  const code = ["Full-Stack", "Front-End", "Back-End", "Notion"];
+  if (chip === "Notion") return "chip-notion";
+  const code = ["Full-Stack", "Front-End", "Back-End"];
   return code.includes(chip) ? "chip-web-project" : "chip-design-project";
 };
 

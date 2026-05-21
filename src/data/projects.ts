@@ -156,6 +156,18 @@ Instead of a generic e-commerce template, the app feels closer to a brand storyt
     outcomes: `Designing for a single product instead of a catalog changed everything about pacing. The lesson translated: tightening scope makes a design more confident, not less interesting.`,
   },
   {
+    slug: "personal-os",
+    title: "Personal Operating System",
+    tagline:
+      "A Notion workspace that ties together notes, projects, and weekly review. Published as a public template.",
+    chips: ["Notion"],
+    heroImage: "",
+    heroAlt: "Personal Operating System Notion workspace preview",
+    links: {
+      notion: "https://www.notion.so/",
+    },
+  },
+  {
     slug: "lms-dashboard",
     title: "LMS Admin Dashboard",
     tagline:
