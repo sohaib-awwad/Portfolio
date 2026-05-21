@@ -110,10 +110,15 @@
 /* === Body === */
 .project-card__body {
   padding: 20px;
-  text-align: left;
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .chip-web-project {
