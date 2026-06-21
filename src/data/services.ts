@@ -9,7 +9,7 @@ export type Service = {
   whatYouGet?: string[];
   process?: { step: string; desc: string }[];
   techAndTools?: string[];
-  featuredProjectSlugs?: string[];
+  relatedChips?: string[];
   faq?: { q: string; a: string }[];
 };
 
@@ -55,7 +55,7 @@ export const services: Service[] = [
       "Git / GitHub",
       "SSMS",
     ],
-    featuredProjectSlugs: ["evo-team", "jobline"],
+    relatedChips: ["Full-Stack", "Front-End", "Back-End"],
     faq: [
       {
         q: "Do you work with frameworks other than Angular and .NET?",
@@ -105,7 +105,7 @@ export const services: Service[] = [
       },
     ],
     techAndTools: ["Figma", "Canva"],
-    featuredProjectSlugs: ["jobline", "vanora", "web-design-template"],
+    relatedChips: ["UI / UX"],
     faq: [
       {
         q: "Do you only design — or can you build it too?",
@@ -155,7 +155,7 @@ export const services: Service[] = [
       },
     ],
     techAndTools: ["Figma", "Canva"],
-    featuredProjectSlugs: ["vanora"],
+    relatedChips: ["Graphic Design"],
     faq: [
       {
         q: "Do you do logo-only projects?",
@@ -205,7 +205,7 @@ export const services: Service[] = [
       },
     ],
     techAndTools: ["Notion", "Notion Automations", "Notion Formulas", "Figma"],
-    featuredProjectSlugs: [],
+    relatedChips: ["Notion"],
     faq: [
       {
         q: "What kinds of workspaces do you build?",

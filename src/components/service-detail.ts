@@ -1,6 +1,7 @@
 import { services, type Service } from "../data/services";
 import { projects } from "../data/projects";
-import { projectUrl, serviceUrl, homeUrl, asset } from "../utils/slug";
+import { renderProjectCard } from "./projects";
+import { projectsPageUrl, serviceUrl, homeUrl } from "../utils/slug";
 
 const escapeAttr = (s: string): string =>
   s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
@@ -79,30 +80,33 @@ function renderProcess(s: Service): string {
 }
 
 function renderFeaturedProjects(s: Service): string {
-  if (!s.featuredProjectSlugs?.length) return "";
-  const cards = s.featuredProjectSlugs
-    .map((slug) => projects.find((p) => p.slug === slug))
-    .filter((p): p is NonNullable<typeof p> => Boolean(p))
-    .map(
-      (p) => `
-      <li class="sd-project-card">
-        <a class="sd-project-card__link" href="${projectUrl(p.slug)}"
-           aria-label="Read case study: ${escapeAttr(p.title)}">
-          <div class="sd-project-card__image">
-            <img src="${asset(p.heroImage)}" alt="${escapeAttr(p.heroAlt)}" loading="lazy" />
-          </div>
-          <div class="sd-project-card__body">
-            <h3>${p.title}</h3>
-            <p>${p.tagline}</p>
-            <span class="sd-project-card__cta">
-              Read case study <i class="fa-solid fa-arrow-right"></i>
-            </span>
-          </div>
-        </a>
-      </li>`
-    )
-    .join("");
-  return section("Featured projects", `<ul class="sd-project-grid">${cards}</ul>`);
+  if (!s.relatedChips?.length) return "";
+  const related = projects.filter((p) =>
+    p.chips.some((c) => s.relatedChips!.includes(c))
+  );
+  if (!related.length) return "";
+
+  // Floppy-tagged projects first; within each group the original array
+  // order (newest/most-important first) is preserved by the stable sort.
+  const top = [...related]
+    .sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)))
+    .slice(0, 3);
+
+  // Reuse the exact card design from the Projects page.
+  const cards = top.map((p, i) => renderProjectCard(p, i, true)).join("");
+
+  const viewAll = `
+    <div class="sd-view-all-wrap">
+      <a class="sd-view-all" href="${projectsPageUrl()}">
+        <span>View All Projects</span>
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>`;
+
+  return section(
+    "Featured projects",
+    `<ul class="projects__grid">${cards}</ul>${viewAll}`
+  );
 }
 
 function renderFaq(s: Service): string {

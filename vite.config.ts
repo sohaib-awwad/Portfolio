@@ -17,6 +17,8 @@ export default defineConfig({
     rollupOptions: {
       input: Object.fromEntries([
         ["main", "index.html"],
+        ["projects", "projects.html"],
+        project("employee-hub"),
         project("evo-team"),
         project("jobline"),
         project("floppy-portfolio"),

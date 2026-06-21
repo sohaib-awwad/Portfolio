@@ -140,7 +140,7 @@ function initActiveNav() {
   // Sub-page → highlight parent section
   const path = location.pathname;
   const base = import.meta.env.BASE_URL;
-  if (path.startsWith(`${base}projects/`)) {
+  if (path === `${base}projects.html` || path.startsWith(`${base}projects/`)) {
     setActive("projects");
     return;
   }

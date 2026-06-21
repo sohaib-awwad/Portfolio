@@ -259,6 +259,7 @@
 }
 
 .sd-project-card__image {
+  position: relative;
   aspect-ratio: 16 / 9;
   overflow: hidden;
 }
@@ -302,6 +303,69 @@
   font-weight: 600;
   font-size: 0.9rem;
   margin-top: var(--space-2);
+}
+
+/* ---------- Floppy (featured) flag ---------- */
+.project-flag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  box-shadow: var(--shadow-s);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.project-flag i {
+  font-size: 0.78rem;
+}
+
+/* ---------- "View all projects" button ---------- */
+.sd-view-all-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-5);
+}
+
+.sd-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  box-shadow: var(--shadow-s);
+  transition:
+    transform var(--dur-2) var(--ease),
+    box-shadow var(--dur-2) var(--ease);
+}
+
+.sd-view-all i {
+  font-size: 0.85rem;
+  transition: transform var(--dur-2) var(--ease);
+}
+
+.sd-view-all:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-m);
+}
+
+.sd-view-all:hover i {
+  transform: translateX(4px);
 }
 
 /* ---------- FAQ ---------- */

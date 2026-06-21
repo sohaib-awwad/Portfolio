@@ -1,6 +1,6 @@
 import AOS from "aos";
 import { projects, type Project } from "../data/projects";
-import { projectUrl, asset } from "../utils/slug";
+import { projectUrl, projectsPageUrl, asset } from "../utils/slug";
 
 const PAGE_SIZE = 6;
 
@@ -45,7 +45,16 @@ const renderHeroImage = (p: Project): string => {
   return `<span class="project-card__image-fallback" aria-hidden="true">${slug} shot</span>`;
 };
 
-const renderProjectCard = (p: Project, index: number): string => {
+export const floppyFlag = (): string =>
+  `<span class="project-flag">
+     <i class="fa-solid fa-fire" aria-hidden="true"></i> Floppy
+   </span>`;
+
+export const renderProjectCard = (
+  p: Project,
+  index: number,
+  showFlag: boolean
+): string => {
   const delay = (index % PAGE_SIZE) * 100;
   const chips = p.chips
     .map((c) => `<span class="${chipClass(c)}">${c}</span>`)
@@ -72,6 +81,8 @@ const renderProjectCard = (p: Project, index: number): string => {
     "project-card__image" +
     (p.heroImage ? "" : " project-card__image--placeholder");
 
+  const flag = showFlag && p.featured ? floppyFlag() : "";
+
   return `
     <li class="project-card"
         data-chips="${p.chips.join("|")}"
@@ -79,6 +90,7 @@ const renderProjectCard = (p: Project, index: number): string => {
         data-aos-duration="700"
         data-aos-delay="${delay}">
       <a class="${imageClass}" href="${detail}" aria-label="Read case study: ${p.title}">
+        ${flag}
         ${renderHeroImage(p)}
       </a>
       <div class="project-card__body">
@@ -98,11 +110,54 @@ const renderProjectCard = (p: Project, index: number): string => {
     </li>`;
 };
 
-export function createProjectsSection(): HTMLElement {
+const viewAllButton = (): string => `
+  <div class="projects__view-all-wrap">
+    <a class="projects__view-all" href="${projectsPageUrl()}">
+      <span>View All Projects</span>
+      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+    </a>
+  </div>`;
+
+export type ProjectsVariant = "featured" | "all";
+
+export function createProjectsSection(
+  options: { variant?: ProjectsVariant } = {}
+): HTMLElement {
+  const { variant = "featured" } = options;
+
   const el = document.createElement("section");
-  el.className = "container projects";
+  el.className = `container projects projects--${variant}`;
   el.id = "projects";
   el.setAttribute("aria-labelledby", "projects-title");
+
+  if (variant === "featured") {
+    // Show the Floppy-flagged projects, capped at 6 on the home page.
+    const featured = projects.filter((p) => p.featured).slice(0, PAGE_SIZE);
+
+    el.innerHTML = `
+      <div class="projects__header"
+        data-aos="fade-up"
+        data-aos-duration="700">
+        <h2 id="projects-title">Projects</h2>
+        <p>A handpicked few I'm proudest of — flexible creations where design and code dance together.</p>
+      </div>
+
+      <ul class="projects__grid">
+        ${featured.map((p, i) => renderProjectCard(p, i, false)).join("")}
+      </ul>
+
+      ${viewAllButton()}
+    `;
+
+    return el;
+  }
+
+  // variant === "all"
+  // Floppy-flagged projects first; within each group the original array
+  // order is preserved by the stable sort.
+  const ordered = [...projects].sort(
+    (a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured))
+  );
 
   const usedChips = new Set<string>();
   projects.forEach((p) => p.chips.forEach((c) => usedChips.add(c)));
@@ -117,11 +172,11 @@ export function createProjectsSection(): HTMLElement {
   ].join("");
 
   el.innerHTML = `
-    <div class="projects__header"
+    <div class="projects__header projects__header--page"
       data-aos="fade-up"
       data-aos-duration="700">
-      <h2 id="projects-title">Projects</h2>
-      <p>Flexible creations where design and code dance together.</p>
+      <h1 id="projects-title">Welcome to my work</h1>
+      <p>Everything I've designed and built in one place — full-stack apps, interfaces, brand identities, and Notion systems. Filter by what you're after, or just scroll and explore.</p>
     </div>
 
     <div class="projects__filters"
@@ -133,7 +188,7 @@ export function createProjectsSection(): HTMLElement {
     </div>
 
     <ul class="projects__grid">
-      ${projects.map(renderProjectCard).join("")}
+      ${ordered.map((p, i) => renderProjectCard(p, i, true)).join("")}
     </ul>
 
     <nav class="projects__pagination" aria-label="Projects pagination" hidden>

@@ -3,6 +3,7 @@ export type Project = {
   title: string;
   tagline: string;
   chips: string[];
+  featured?: boolean;
   heroImage: string;
   heroAlt: string;
   links: {
@@ -41,11 +42,107 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "employee-hub",
+    title: "Olive — Employee Hub",
+    tagline:
+      "A modern, role-based HR portal for attendance, leave, and team management — two tailored experiences from one full-stack codebase.",
+    chips: ["Full-Stack"],
+    featured: true,
+    heroImage: "images/EmployeeHub-cover.webp",
+    heroAlt: "Olive Employee Hub login screen",
+    links: {
+      live: "https://employee-hub-a6dy.onrender.com/",
+      code: "https://github.com/sohaib-awwad/employee-hub",
+    },
+    overview: `Olive is a full-stack HR platform that gives a company two tailored experiences from a single codebase. Employees clock in and out, track breaks, request leave, and stay in the loop with announcements. Admins manage the whole team — approving leave, correcting attendance, onboarding staff, posting announcements, and exporting polished PDF reports.
+
+It's built to feel like a real product, not a demo: secure role-based authentication, a coherent "Olive" design language, thoughtful edge-case handling like a 12-hour auto-punch-out safeguard, and a clean, mobile-friendly interface in both light and dark mode.`,
+    myRole: [
+      "Designed and built the entire product end to end — from the PostgreSQL schema to the pixel-level UI",
+      "Architected a full-stack TypeScript monorepo (pnpm workspaces) around an API-first, single-source-of-truth contract",
+      "Built role-based authentication with cookie-based sessions and bcrypt-hashed passwords",
+      'Crafted the "Olive" design system — natural greens, Spline Sans + Inter typography, and first-class light/dark theming',
+      "Implemented the admin tooling: leave approvals, attendance correction that auto-writes records, and branded per-employee PDF reports",
+    ],
+    techStack: [
+      {
+        name: "React 19 + Vite",
+        why: "A fast, modern SPA frontend with instant HMR during development.",
+      },
+      {
+        name: "Tailwind CSS v4",
+        why: "Utility-first styling that drives a consistent, fully themeable design system.",
+      },
+      {
+        name: "TanStack Query + wouter",
+        why: "Typed server-state caching paired with a tiny, focused router.",
+      },
+      {
+        name: "Express 5",
+        why: "A lightweight API layer with cookie-based sessions and bcrypt password hashing.",
+      },
+      {
+        name: "PostgreSQL + Drizzle ORM",
+        why: "Type-safe relational data access with a schema that mirrors the domain.",
+      },
+      {
+        name: "OpenAPI contract",
+        why: "A single API spec generates the typed React-Query client and Zod validators, so the frontend and backend can never silently drift.",
+      },
+      {
+        name: "Render + Neon Postgres",
+        why: "Ships as one service — the API serves the built SPA — behind a single free-tier URL.",
+      },
+    ],
+    features: [
+      {
+        title: "Role-based dashboards",
+        desc: "Employees get a personal dashboard with a live work-hours timer, weekly hours chart, and leave-balance rings; admins see pending approvals, who's present today, and headcount at a glance.",
+      },
+      {
+        title: "Attendance with safeguards",
+        desc: "Punch in and out and track breaks, with a 12-hour auto-punch-out so a forgotten clock-out can never run forever.",
+      },
+      {
+        title: "Leave management",
+        desc: "Request annual, sick, casual, maternity/paternity, unpaid, or other leave, with live balances and gender-aware entitlements.",
+      },
+      {
+        title: "Smart correction approvals",
+        desc: "Approving a correction opens a modal to set the corrected work window and writes the attendance record automatically, showing total and overtime hours live.",
+      },
+      {
+        title: "Branded PDF reports",
+        desc: "Generate per-employee attendance reports over any date range — working days, days worked, holidays, and leave-balance usage.",
+      },
+      {
+        title: "Announcements & events",
+        desc: "An admin-published feed of company news, events, and policy updates, with unread badges for employees.",
+      },
+    ],
+    challenges: [
+      {
+        challenge:
+          "Two very different audiences — employees and admins — had to share one codebase without the experience feeling generic for either.",
+        solution:
+          "I drove both views from a single API contract and one design system, then tailored layout, density, and primary actions per role so each persona gets a purpose-built screen.",
+      },
+      {
+        challenge:
+          "A forgotten clock-out could leave a shift running indefinitely and corrupt hour totals.",
+        solution:
+          "I added a 12-hour auto-punch-out safeguard plus an admin correction flow that recomputes total and overtime hours and writes the record automatically.",
+      },
+    ],
+    outcomes: `Olive ships as a single service behind one URL and runs free on Render + Neon. Owning every layer — schema, API, design system, and UI — kept the product coherent end to end, and the OpenAPI contract guaranteed the frontend and backend could never silently drift. It's the project that best shows what I build when I control the whole stack.`,
+  },
+  {
     slug: "evo-team",
     title: "EVO-TEAM Website",
     tagline:
       "A platform designed to showcase EVO-TEAM, a student team from the Hashemite University. It features and a portal for students to join the team.",
     chips: ["Full-Stack", "UI / UX"],
+    featured: true,
     heroImage: "images/EVO-TEAM.webp",
     heroAlt: "EVO-TEAM Website preview",
     links: {
@@ -94,6 +191,7 @@ The challenge was keeping the visual language consistent across all three while 
     tagline:
       "A responsive portfolio website built with modern web technologies (Vanilla Vite). Designed to showcase my projects and skills, with a clean, flexible layout.",
     chips: ["Front-End", "UI / UX"],
+    featured: true,
     heroImage: "images/FloppyManWebsite.webp",
     heroAlt: "Floppy Man Portfolio preview",
     links: {
@@ -117,6 +215,7 @@ I wanted a portfolio that reflected the Floppy Man brand: flexible, playful, and
     tagline:
       "End-to-end UX design for a multi-tenant loyalty SaaS platform — card-based loyalty mechanics, wallet pass delivery, and a cashier-first operations model.",
     chips: ["UI / UX"],
+    featured: true,
     heroImage: "images/Stambat Dashboard.webp",
     heroAlt: "Stambat Loyalty SaaS Platform preview",
     links: {
@@ -140,6 +239,7 @@ The project covers four product surfaces across a 10-phase design workflow: a ma
     tagline:
       "Brand identity and full website design for a specialty coffee house in Madinat Al-Sharq — bilingual, dark/light mode, and built for real operations.",
     chips: ["UI / UX"],
+    featured: true,
     heroImage: "images/Cor_Coffee_House_Hero-Image.webp",
     heroAlt: "Cor Coffee House Website preview",
     links: {
@@ -238,6 +338,7 @@ The name "Tafweej" describes groups of people gathering and moving together in o
     tagline:
       "A second identity for the same pilgrimage platform after a forced rename — built around a single, instantly readable figure of a pilgrim walking a straight path.",
     chips: ["Graphic Design"],
+    featured: true,
     heroImage: "images/msar.webp",
     heroAlt: "Msar logo and brand mark",
     links: {
@@ -302,6 +403,7 @@ The iconic mark is deliberately simple and does everything at once: the brand co
     tagline:
       "A mobile-first weight training system built entirely in Notion — with relational databases, auto-calculated 1RM, PR detection, and progressive overload suggestions.",
     chips: ["Notion"],
+    featured: true,
     heroImage: "images/floppy-gym-tracker.webp",
     heroAlt: "Floppy GYM Tracker Notion workspace preview",
     links: {

@@ -17,6 +17,10 @@ export function serviceUrl(slug: string): string {
   return `${import.meta.env.BASE_URL}services/${slug}.html`;
 }
 
+export function projectsPageUrl(): string {
+  return `${import.meta.env.BASE_URL}projects.html`;
+}
+
 export function homeUrl(hash = ""): string {
   return `${import.meta.env.BASE_URL}${hash}`;
 }

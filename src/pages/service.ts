@@ -2,6 +2,7 @@ import "../style.css";
 import "../styles/navbar.css";
 import "../styles/footer.css";
 import "../styles/services.css";
+import "../styles/projects.css";
 import "../styles/service-detail.css";
 
 import { mountPageShell } from "../utils/page-shell";
