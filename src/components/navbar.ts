@@ -1,4 +1,4 @@
-import { homeUrl, asset } from "../utils/slug";
+import { homeUrl, asset, projectsPageUrl } from "../utils/slug";
 
 type SectionId = "about" | "services" | "skills" | "projects" | "contact";
 
@@ -26,7 +26,7 @@ export function createNavbar(): HTMLElement {
         <a class="menu__link" data-section="about" href="${link("#about")}">About</a>
         <a class="menu__link" data-section="services" href="${link("#services")}">Services</a>
         <a class="menu__link" data-section="skills" href="${link("#skills")}">Resume</a>
-        <a class="menu__link" data-section="projects" href="${link("#projects")}">Projects</a>
+        <a class="menu__link" data-section="projects" href="${projectsPageUrl()}">Projects</a>
         <a class="btn-primary" data-section="contact" href="${link("#contact")}">Contact</a>
         <button class="theme-toggle" aria-label="Toggle theme">
           <i class="fa-solid fa-moon" aria-hidden="true"></i>
@@ -47,7 +47,7 @@ export function createNavbar(): HTMLElement {
       <a class="menu__link" data-section="about" href="${link("#about")}">About</a>
       <a class="menu__link" data-section="services" href="${link("#services")}">Services</a>
       <a class="menu__link" data-section="skills" href="${link("#skills")}">Resume</a>
-      <a class="menu__link" data-section="projects" href="${link("#projects")}">Projects</a>
+      <a class="menu__link" data-section="projects" href="${projectsPageUrl()}">Projects</a>
       <a class="btn-primary mobile-cta" data-section="contact" href="${link("#contact")}">Contact</a>
     </div>
   `;

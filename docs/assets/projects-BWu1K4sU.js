@@ -1,0 +1,1 @@
+import{m as o}from"./projects-BZuKw93H.js";import{c as t}from"./projects-sRVvbuZy.js";o();const e=document.querySelector("#app");e&&(document.title="Projects — Sohaib Awwad (Floppy Man)",e.appendChild(t({variant:"all"})));

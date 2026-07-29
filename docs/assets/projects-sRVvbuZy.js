@@ -1,4 +1,4 @@
-import{p as $,c as S,b as F,a as N,A as w}from"./projects-X_s2dOJM.js";const f=6,P=["Full-Stack","Front-End","Back-End","UI / UX","Graphic Design","Notion"],A=e=>e==="Notion"?"notion":["Full-Stack","Front-End","Back-End"].includes(e)?"web":"design",x=e=>{const s=A(e);return s==="web"?"chip-web-project":s==="design"?"chip-design-project":"chip-notion"},C=e=>`filter-chip filter-chip--${A(e)}`,j=(e,s,t)=>`
+import{p as $,c as S,b as F,a as N,A as w}from"./projects-BZuKw93H.js";const f=6,P=["Full-Stack","Front-End","Back-End","UI / UX","Graphic Design","Notion"],A=e=>e==="Notion"?"notion":["Full-Stack","Front-End","Back-End"].includes(e)?"web":"design",x=e=>{const s=A(e);return s==="web"?"chip-web-project":s==="design"?"chip-design-project":"chip-notion"},C=e=>`filter-chip filter-chip--${A(e)}`,j=(e,s,t)=>`
   <a href="${e}" target="_blank" rel="noopener"
      class="project-icon-link" aria-label="${t}">
     <i class="${s}" aria-hidden="true"></i>

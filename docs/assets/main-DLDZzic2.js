@@ -1,4 +1,4 @@
-import{s as y,m as _}from"./projects-X_s2dOJM.js";import{s as w}from"./services-n9dh-1Iu.js";import{c as S}from"./projects-CiMTQWmR.js";function k(){const e=document.createElement("section");e.className="container hero",e.innerHTML=`
+import{s as y,m as _}from"./projects-BZuKw93H.js";import{s as w}from"./services-n9dh-1Iu.js";import{c as S}from"./projects-sRVvbuZy.js";function k(){const e=document.createElement("section");e.className="container hero",e.innerHTML=`
     <div class="hero-content">
       <h1 data-aos="fade-up" data-aos-duration="800">
         Hi, I'm<br/><span data-aos="fade-up" data-aos-delay="150" data-aos-duration="800" class="gradient-text typing"></span>
